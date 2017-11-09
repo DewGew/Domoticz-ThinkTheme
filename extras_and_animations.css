@@ -335,7 +335,7 @@ input[type='checkbox']:not(.noscheck) {
 		white-space: nowrap;
 		height: 18px;
 		width: 40px;
-		border-radius: 0px;
+		border-radius: 8px;
 		background: rgba(191,29,27,1);
 		margin: 3px 28px 3px 0px;
 	}
@@ -348,7 +348,7 @@ input[type='checkbox']:not(.noscheck) + label:before {
 	width: 30px;
 	top: 0px;
 	left: 0px;
-	border-radius: 0px;
+	border-radius: 8px;
 	-moz-transition: .25s ease-in-out;
 	-webkit-transition: .25s ease-in-out;
 	transition: .25s ease-in-out;
@@ -358,11 +358,11 @@ input[type='checkbox']:not(.noscheck) + label:after {
 	content: "";
 	position: absolute;
 	display: block;
-	height: 14px;
-	width: 19px;
-	top: 2px;
+	height: 18px;
+	width: 18px;
+	top: 0px;
 	left: 2px;
-	border-radius: 0px;
+	border-radius: 10px;
 	background: white;
 	box-shadow: inset 0 0 0 1px rgba(0,0,0,.2), 0 2px 4px rgba(0,0,0,.2);
 	-moz-transition: .25s ease-in-out;
