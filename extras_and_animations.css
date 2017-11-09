@@ -4,7 +4,6 @@
 
 /*  POPUP ANIMATION  */
 
-/*
 @-webkit-keyframes fadeIn {
     from { opacity: 0; }
       to { opacity: 1; }
@@ -24,7 +23,6 @@ body:hover .ui-dialog{
     animation: fadeIn 0.2s;
     animation-fill-mode: forwards;
 }
-*/
 
 /*  Fan spinning animation  */
 
