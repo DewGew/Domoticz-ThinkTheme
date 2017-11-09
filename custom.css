@@ -1,0 +1,500 @@
+@import url("../css/legacy.css"); /* Don't remove this line! */
+@import url("base.css"); /* Don't remove this line! */
+@import url("extras_and_animations.css"); /* Adds visual extras. */
+/*@import url("navigation_main_sidebar.css"); /* This transforms the main menu to a vertical menu on the left. */
+@import url(https://fonts.googleapis.com/css?family=Damion);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+@import url(https://fonts.googleapis.com/css?family=Arimo);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+/*
+'ThinkTheme' theme for Domoticz
+*/
+body {
+   background: #2B2E37; /* Old browsers */
+}
+
+#copyright a {
+   color: #FFF; 
+}
+
+#copyright p {
+   font-family: Ubuntu, sans-serif !important;
+   font-size: 1em;
+   color: #6A6A6A;
+   font-style: italic;
+}
+
+.warning-text {
+   color: yellow;
+   font-weight: normal;
+
+}
+
+h2 {
+   font-family: Arimo, sans-serif;
+   color: #DCDCDC;
+}
+
+body {
+   font-family: Arimo !important;
+   color: #ddd; /*!important;*/
+   background-color: #2B2E37 !important;
+   /*color: #FFF;*/
+}
+
+/* Text in tables */
+td {
+   font-family: Ubuntu !important;
+}
+
+/* Text before/after dropdown selectors of tables */
+label, select {
+   font-family: Ubuntu !important;
+}
+
+.bootbox-body {
+   font-family: Ubuntu !important;
+}
+
+/* Text header above tables */
+.theader h1 {
+   font-family: Arimo !important;
+}
+
+/* Domoticz logo upperleft corner */
+.brand h1 {
+   font-family: 'Damion', sans-serif;
+   font-size: 1.7em;
+   font-weight: 200;
+   color: #FFF;
+}
+
+/* Version info */
+.brand h2 {
+   float: left;
+   margin-left: 155px;
+   margin-top: -23px;
+   text-decoration: none;
+   text-transform: none;
+   font-family: Arimo;
+   font-size: 0.55em;
+   font-style: italic;
+   color: #FFF;
+}
+
+#timesun, #scenecontent {
+   font-family: Ubuntu;
+}
+
+.navbar .nav li a {
+   text-decoration: none;
+   text-transform: none;
+   border-color: transparent;
+   font-family: Ubuntu !important;
+   padding: 10px;
+   font-weight: normal !important;
+   text-align: center;
+   color: #FFF;
+   background-color: #2B2E37;
+   background-image: none !important;
+}
+
+/* Make the navbar come a bit more down, so we have more room for the border around the buttons*/
+.navbar-inner {
+  min-height: 44px;
+}
+
+.navbar .nav .dropdown-menu {
+   border: 0px;
+   font-family: Roboto,sans-serif;
+   padding: 4px;
+   background-color: #2B2E37;
+   background-image: none;
+}
+
+
+.navbar .nav li a:hover {
+   border:1px solid #4a4b4a; 
+   background-color: #404552 !important;
+   border-style: solid !important;
+   border-width: 1px !important;
+   border-color: #676D79 !important;
+}
+
+
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+  color: #ffffff;
+  background-color: #2B2E37;
+  /* border: 1px solid #3093C7 !important; */
+}
+
+/* Lines between menu items */
+.dropdown-menu .divider {
+   *width: 100%;
+   height: 1px;
+   margin: 4px 1px;
+   *margin: -5px 0 5px;
+   overflow: hidden;
+   background-color: #353535;
+   border-bottom: 1px solid #676D79;
+}  
+
+body table#itemtablenostatus tbody tr{
+   display: block;
+
+   width: 96%;
+   padding: 5px 5px 5px 5px;
+   margin: 2px 100% 5px 0;
+
+   border-style: none;
+   border-radius: 5px;
+
+   color: #DCDCDC;
+   background-color: #404552;
+
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+body table#itemtablenostatus tr td:first-child + td{ 
+   margin: -27px 6px 0px 0px;
+}
+
+body table#itemtable tbody tr{
+   display: block;
+   width: 96%;
+   padding: 5px 5px 5px 5px;
+   margin: 2px 100% 5px 0;
+   border-style: none;
+   border-radius: 5px;
+   color: #DCDCDC;
+   background-color: #F1F5FA;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hover state for blocks */
+table#itemtablenostatus tr:hover, table#itemtablenotype tr:hover, table#itemtabledoubleicon tr:hover, table#itemtable tr:hover, table#itemtablesmall tr:hover{
+   background-color: #4C4E56 !important;
+}
+
+/* Set color & font of 'On' and 'Off' in upper right corner of blocks. Also for title & lastupdate of block */
+td#bigtext, td#name, td#lastupdate{
+   color: #34363F !important;
+   font-family: Arimo !important;
+}
+
+td#lastupdate{
+   color: #DCDCDC !important;
+   font-family: Arimo !important;
+}
+
+p#copyright{
+   color: #DCDCDC !important;
+   font-family: Arimo !important;
+}
+
+/* Color of menubar on top of page */
+.navbar-inverse .navbar-inner {
+   background-color: #404552; 
+   background-image: none;
+   background-repeat: no-repeat;
+   filter: none;
+}
+
+.btnsmall {
+   background: #2B2E37;
+   border-color: #2B2E37;
+}
+
+/* Text color when mouseover button*/
+.btnsmall:hover{
+   color: #FFFFFF;
+}
+
+/* Make text inside 'Set mode' / 'Create virtual sensor' buttons not bold anymore */
+.label, .badge {
+    font-weight: normal;
+}
+
+body table#itemtablenotype tbody tr{
+   color: #DCDCDC;
+   background-color: #404552;
+   font-family: Roboto, sans-serif important;
+}
+
+body table#itemtablenotype tr td:first-child + td{ 
+   margin: -27px 6px 0px 0px;
+}
+
+
+body table#itemtablesmall tbody tr{
+   color: #DCDCDC;
+   background-color: #404552 !important;
+   font-family: Arimo !important;
+}
+
+body table#itemtablesmall tr td:first-child + td{ 
+   margin: -27px 6px 0px 0px;
+}
+
+body table#itemtabledoubleicon tbody tr, body table#itemtabletrippleicon tbody tr, body table#itemtablesmalldoubleicon tbody tr, body table#itemtablesmalltrippleicon tbody tr{
+   color: #DCDCDC;
+   background-color: #404552;
+   font-family: Roboto, sans-serif important;
+}
+
+body table#itemtabledoubleicon tr td:first-child + td{ 
+   margin: -27px 6px 0px 0px;
+}
+
+body table#itemtabledoubleicon tbody tr:hover, body table#itemtablesmalldoubleicon tbody tr:hover, body table#itemtabletrippleicon tbody tr:hover, body table#itemtablesmalltrippleicon tbody tr:hover{
+   border-color: #2B2C74;
+   background-color: #404552;
+   font-family: Roboto, sans-serif important;
+}
+
+body table#itemtable tbody tr{
+   background-color: #404552;
+}
+
+body table#itemtable tr td:first-child + td{ 
+   color: #404552;
+   margin: -27px 6px 0px 0px;
+}
+
+/* Table rows even */
+tr.even {
+   background-color: #34363F;
+   color: #DCDCDC;
+}
+
+/* Table rows odd */
+tr.odd {
+   background-color: #404552;
+   color: #DCDCDC;
+}
+select {
+	background-color: #2B2E37;
+	color: #fff;
+	border: 0;
+}
+
+.dataTables_length select {
+	background-color: #fff;
+	color: #000;
+	border: 0;
+}
+
+div:not(.ui-dialog) input.ui-widget-content,
+.ui-widget-content select {
+	background-color: #283750;
+	background-image: none !important;
+	border: none;
+}
+
+.ui-dialog, .ui-dialog-buttonpane, .ui-widget-content {
+	color: #ddd; /*!important;*/
+	background-color: #013;
+	background-image: linear-gradient(to bottom, #001c38 0%,#0f0c2b 100%);
+	background-attachment: fixed;
+}
+
+.ui-dialog-titlebar,
+.ui-state-default:not(.ui-slider-handle),
+.ui-widget-header:not(.ui-slider-handle):not(.ui-slider-range),
+.ui-timepicker-div .ui-slider-handle {
+	background-color: #2B2E37;
+	background-image: url("images/tablebars_500x100.png") !important;
+	;
+}
+
+/* Give selected table row a petrol blue color */
+table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
+    background-color: #324979 !important;
+    color: #FFF;
+}
+
+.btnsmall {
+   color: #DCDCDC;
+   border-color: #333333;
+   border-style: solid;
+   border-width: thin;
+}
+
+#copyright p:after {
+  content: "  | 'DewGew Theme' by DewGew";
+}
+
+.btnstyle, .btnstylerev, .btnsmall, .btnstyle3, .btnstyle3-dis, .btn-default, .btn-primary, .btn-mini, .btn-info, .btn-warning, .btn-danger .btn-success, .btn-small.disabled, .ui-button-text, .submitbuttonp1usb {
+   font-family: Ubuntu !important;
+}
+
+/* Grey-flatstyle background for disabled buttons (Update/Delete at 'Hardware' page) */
+.btnstyle3-dis {
+    background: #4C4E56;
+    color: #8E8E8E;
+}
+
+/* Flat style for blue 'Update' button */
+.btnstyle3 {
+    background: #3A87AD;
+}
+
+/* Flat style for purple 'All Devices' button at Hardware page */
+.btnstyle3-sel {
+    background: #6C519E;
+}
+
+/* Flat style for 'Apply settings' button at Settings page */
+.sub-tabs-apply {
+    border: 1px solid transparent !important;
+}
+.btn-danger {
+    background-color: #B94A48 !important;
+}
+
+/* Color for enabled 'Notification' & 'Timers' button */
+#itemtablenostatus .btnsmall-sel {
+    background: #337AB7;
+}
+
+/* Dropdown boxes at 'Scene page' */
+#comboroom, #combotype, #combodevice, #combowhen, #combopriority, #combodatatimeout, #sensortype, #P1Baudrate {
+   font-family: Ubuntu !important;
+}
+
+/* Text inside user editable text boxes */
+#devicename, #onaction, #offaction, #devicedescription, #ondelaytime, #offdelaytime {
+   font-family: Ubuntu !important;
+}
+
+/* Set color of text input fields */
+.text.ui-widget-content {
+   border: 1px solid #42434B !important;
+   background: #2B2E37 !important;
+   color: #FFF;
+}
+
+.ui-widget-content {
+   background: #2B2E37 !important;
+}
+
+/* Background colors */
+.row-fluid [class^="span"] {
+	background-color: #42434B; /*!important;*/
+	color: #fff !important;
+}
+
+/*#protectiontable, 
+#loghistory table, 
+#notifications>table, 
+#metercounters table, 
+#othersettings table,
+#floorplans table, 
+#settingscontent #ActiveTabs,
+#emailtable,*/
+#hardwarecontent > div:not(.page-header-small):not(.bannav):not(#bannav),
+#hardwarecontent > table:not(.page-header-small):not(.bannav):not(#bannav),
+#hardwarecontent #ipnodeparamstable,
+#nodeparamstable,
+#utilitycontent #notificationparamstable,
+#plancontent #activeparamstable,
+#usercontent #userparamstable, #cameracontent #activeparamstable, #hardwarecontent #hardwareparamstable,
+#lightcontent #paramstable:not(:nth-of-type(1)):not(:nth-of-type(2)),
+#scenecontent #paramstable:not(:nth-of-type(1)):not(:nth-of-type(2)),
+#weathercontent #notificationparamstable, #lightcontent #timerparamstable,
+#tempnotifications #notificationparamstable, #lightcontent #notificationparamstable,
+#scenecontent #timerparamstable,
+#notificationtable:not(.dataTable),
+#notifications > table,
+#paramstable, #fibaromain #uservariablesedittable,
+#customlog, #timerparamstable,
+#linkparamstable, #influxremote,
+#linkhttpparamstable, #httpremote,
+#linkgooglepubsubparamstable, #googlepubsubremote,
+#fibaromain #linkparamstable, #fibaromain #fibaroremote,
+#userparamstable, #activeparamstable, #lightcontent paramstable,
+#scenecontent #paramstable,
+#notificationparamstable, #hardwareparamstable,
+#eventparamstable {
+	background-color: #42434B;
+	border-top: 10px solid #42434B;
+	border-bottom: 10px solid #42434B;
+}
+
+/* Text at RFXCOM set mode page */
+#settings {
+   font-family: Ubuntu !important;
+}
+
+/* Setup > Settings tabs */
+.tab-content {
+  overflow: auto;
+  border: 1px solid #42434B;
+  padding-left: 10px;
+}
+
+/* Style of tabs at Setup > Settings page */
+.sub-tabs > li > a {
+    color: #DCDCDC;
+    cursor: pointer;
+    background-color: #404552;
+    border: 1px solid transparent;
+}
+
+.sub-tabs > .active > a {
+    color: #FFF;
+    background-color: #4C4E56;
+    border: 1px solid transparent;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #404552;
+}
+
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+    border-color: #43A4D3 transparent transparent;
+    color: #FFF;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+    color: #FFF;
+    cursor: default;
+    background-color: #4C4E56;
+    border: 1px solid transparent;
+    border-bottom-color: transparent;
+}
+
+/* Table header (second row) */
+.fg-toolbar.ui-toolbar.ui-widget-header.ui-helper-clearfix.ui-corner-tl.ui-corner-tr, .fg-toolbar.ui-toolbar.ui-widget-header.ui-helper-clearfix.ui-corner-bl.ui-corner-br, {
+    border: 1px solid !important;
+    background: #24262F !important;
+    border-color: transparent transparent #000 !important;
+}
+dimslider {
+    border-color: #333 !important;
+    box-shadow: none !important;
+}
+
+.dimslider .ui-slider-range {
+    border-radius: inherit;
+}
+
+/* Different color & font for log window */
+div.log {
+    background-color: #27292C;
+    font-family: "Droid Sans Mono", monospace !important;
+}
+
+/* Font color for normal log lines */
+.lognorm {
+    color: #EBE7E3;
+}
+
+/* Font settings for special log lines */
+.logstatus {
+    color: #E36049;
+    font-weight: 100 !important;
+}
