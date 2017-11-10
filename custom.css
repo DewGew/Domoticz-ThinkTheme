@@ -64,6 +64,15 @@ label, select {
 
 /* Domoticz logo upperleft corner */
 .brand h1 {
+   visibility: hidden;
+   position: relative;
+ }
+ 
+.brand:after{
+   visibility: visible;
+   position: absolute;
+   top: 0;
+   content: "MyHome"; /* Changes the header text "Domoticz" */
    font-family: 'Damion', sans-serif;
    font-size: 1.7em;
    font-weight: 200;
