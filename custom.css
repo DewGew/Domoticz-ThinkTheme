@@ -324,7 +324,7 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
 }
 
 #copyright p:after {
-  content: "  | 'DewGew Theme' by DewGew";
+  content: "  | 'ThinkTheme' by DewGew";
 }
 
 .btnstyle, .btnstylerev, .btnsmall, .btnstyle3, .btnstyle3-dis, .btn-default, .btn-primary, .btn-mini, .btn-info, .btn-warning, .btn-danger .btn-success, .btn-small.disabled, .ui-button-text, .submitbuttonp1usb {
