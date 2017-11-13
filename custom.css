@@ -482,7 +482,7 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
     background: #24262F !important;
     border-color: transparent transparent #000 !important;
 }
-dimslider {
+.dimslider {
     border-color: #333 !important;
     box-shadow: none !important;
 }
