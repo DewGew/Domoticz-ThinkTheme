@@ -95,6 +95,10 @@ label, select {
 #timesun, #scenecontent {
    font-family: Ubuntu;
 }
+/* Make the sunrise/ roomselector a bit more down */
+.bannercontent {
+	margin-top: 20px;
+}
 
 .navbar .nav li a {
    text-decoration: none;
