@@ -1,32 +1,65 @@
-/*  
-
-Dear themer 
-
-You can use this file to add your own javascript functions to your theme. 
-
-Some useful things to get you started:
-
-1.
-To find out which classes are available to you, have a look at the page on the WIKI about theming.
-http://domoticz.com/wiki/How_to_theme_Domoticz
-
-
-2.
-Here are some snippets you may find useful:
-
-// This would target all the air quality items onthe dashboard in the utilities section:
-$('body.columns3 section#dashUtility .AirQuality').each(function(){
-    console.log("hello air quality sensor");
-}
-
-// check if the user is on a mobile device:
-if (($scope.config.DashboardType == 2) || (window.myglobals.ismobile == true)) {
-    console.log("User has chosen the mobile display as the dashboard, or is on a mobile phone.");
-}
-
-// Avoiding grouped items (if this feature has made it into Domoticz). This code does a double check: 
-- only select the first three items of each section
-- don't select items called 'bandleader' (grouped items are called 'bands' in the code).
-if ($("section#"+ section + " #"+theid).is($("#dashcontent h2 + div.divider .span4:nth-child(-n+3)")) && !$("section#"+ section + " #" + theid + " div").hasClass('bandleader')) { 
+* 
+ 
+	Custom functions for ThinkTheme
 
 */
+
+/* Load files */
+$.ajax({
+	url: 'acttheme/time_ago.js',
+	async: false,
+	dataType: 'script'
+});
+/* Uncomment below to use custom language for timeago */
+/* 	jQuery.timeago.settings.strings = {
+		
+
+		prefixAgo: "för",
+		prefixFromNow: "om",
+		suffixAgo: "sedan",
+		suffixFromNow: "",
+		seconds: "%d sekunder",
+		minute: "ungefär en minut",
+		minutes: "%d minuter",
+		hour: "ungefär en timme",
+		hours: "ungefär %d timmar",
+		day: "en dag",
+		days: "%d dagar",
+		month: "ungefär en månad",
+		months: "%d månader",
+		year: "ungefär ett år",
+		years: "%d år"
+		
+	 };
+ */
+(function () {
+	$(document).ready(function () {
+		// Add custom functions -->
+		
+		$(document).ajaxSuccess(function (event, xhr, settings) {
+			if (settings.url.startsWith('json.htm?type=devices') ||
+				settings.url.startsWith('json.htm?type=scenes')) {
+				let counter = 0;
+				let intervalId = setInterval(function () {
+					if ($('#main-view').find('.item').length > 0) {
+						// add custom functions to items(tiles) -->
+						
+						$('#main-view .item').each(function () {
+							let xyz = $(this).find('#lastupdate');
+							$(this).find("#lastupdate").timeago("update", xyz.text());
+						});
+						
+						// <-- end custom functions to items(tiles)
+						clearInterval(intervalId);
+					} else {
+						counter++;
+						if (counter >= 5) {
+							clearInterval(intervalId);
+						}
+					}
+				}, 1000);
+			}
+		});
+		// <-- end custom functions 
+	});
+})();
