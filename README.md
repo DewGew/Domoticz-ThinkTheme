@@ -1,5 +1,5 @@
 # Domoticz-ThinkTheme
-ThinkTheme V2.1 for Domoticz V3.8XXX and above
+ThinkTheme V2.2 for Domoticz V3.8XXX and above
 
 Modyfied from [ThinkTheme in domoticz forum](http://www.domoticz.com/forum/viewtopic.php?f=8&t=7863)
 
@@ -9,5 +9,6 @@ Save the files in `../styles/ThinkTheme/` and then choose 'ThinkTheme' from Setu
 ![alt tag](http://www.accentaplast.se/wordpress/wp-content/uploads/2017/11/ThinkTheme.jpg)
 ![alt tag](http://www.accentaplast.se/wordpress/wp-content/uploads/2017/11/ThinkTheme_settings.png)
 # Changelog
+- V2.2 Added Time Ago
 - V2.1 Approvment and small changes in CSS
 - V2.0 First release. 
