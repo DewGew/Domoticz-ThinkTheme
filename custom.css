@@ -1,4 +1,4 @@
-﻿/*
+/*
 'ThinkTheme' theme for Domoticz
 */
 
@@ -38,6 +38,9 @@ body {
    background: var(--main-bg-color) !important;
    font-family: main-font !important;
    color: var(--main-text-color); /*!important;*/
+}
+#bstatus{
+	height: 100px;
 }
 #aboutcontent #canvas2 {
 	display:none;
@@ -97,7 +100,7 @@ label, select {
 /* Version info */
 .brand h2 {
    float: left;
-   margin-left: 175px;
+   margin-left: 150px;
    margin-top: -23px;
    text-decoration: none;
    text-transform: none;
@@ -191,6 +194,26 @@ p#copyright{
 /* Make text inside 'Set mode' / 'Create virtual sensor' buttons not bold anymore */
 .label, .badge {
     font-weight: normal;
+}
+/* Background around Bigtext */
+body table#itemtable tr td:first-child,
+body table#itemtablenotype tr td:first-child,
+body table#itemtablenostatus tr td:first-child,
+body table#itemtabledoubleicon tr td:first-child,
+body table#itemtabletrippleicon tr td:first-child,
+body table#itemtablesmall tr td:first-child,
+body table#itemtablesmalldoubleicon tr td:first-child,
+body table#itemtablesmalltrippleicon tr td:first-child {
+	border-radius: 5px;
+}
+div.item.statusTimeout {
+	
+}
+div.item.statusLowBattery {
+	
+}
+div.item.statusProtected {
+	
 }
 
 body table#itemtablenostatus tbody tr,
