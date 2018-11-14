@@ -1,65 +1,82 @@
-@import url("../css/legacy.css"); /* Don't remove this line! */
-@import url("base.css"); /* Don't remove this line! */
-@import url("extras_and_animations.css"); /* Adds visual extras. */
-/*@import url("navigation_main_sidebar.css"); /* This transforms the main menu to a vertical menu on the left. */
-@import url(https://fonts.googleapis.com/css?family=Damion);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
-@import url(https://fonts.googleapis.com/css?family=Arimo);
-@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
-/*
+﻿/*
 'ThinkTheme' theme for Domoticz
 */
+
+@import url("../css/legacy.css"); /* Don't remove this line! */
+@import url("base.css"); /* Don't remove this line! */
+/*@import url("navigation_main_sidebar.css");
+
+/* Colors */
+:root {
+	--main-bg-color: #2B2E37;
+	--main-item-bg-color: #404552;
+	--main-border-color: #676D79;
+	--main-bg-hover: #4C4E56;
+	--main-text-color: #DCDCDC;
+	--bigtxt-color: #000;
+	--white-text: #fff;
+	--white-bg-color: #fff;
+	--main-button-color: #3A87AD; 
+}
+
+/* Fonts */
+@font-face {
+    font-family: main-font;
+    src: url(font/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: main-font-bold;
+    src: url(font/OpenSans-SemiBold.ttf);
+}
+@font-face {
+    font-family: header;
+    src: url(font/Damion-Regular.ttf);
+}
+
+/* Custom css */
 body {
-   background: #2B2E37; /* Old browsers */
+   background: var(--main-bg-color) !important;
+   font-family: main-font !important;
+   color: var(--main-text-color); /*!important;*/
 }
-
+#aboutcontent #canvas2 {
+	display:none;
+}
 #copyright a {
-   color: #FFF; 
+   color: var(--white-text); 
 }
-
 #copyright p {
-   font-family: Ubuntu, sans-serif !important;
+   font-family: main-font !important;
    font-size: 1em;
-   color: #6A6A6A;
+   color: var(--main-border-color);
    font-style: italic;
 }
-
 .warning-text {
    color: yellow;
    font-weight: normal;
-
 }
 
-h2 {
-   font-family: Arimo, sans-serif;
-   color: #DCDCDC;
-}
-
-body {
-   font-family: Arimo !important;
-   color: #ddd; /*!important;*/
-   background-color: #2B2E37 !important;
-   /*color: #FFF;*/
+h1, h2 {
+   font-family: main-font-bold;
+   color: var(--main-text-color);
 }
 
 /* Text in tables */
 td {
-   font-family: Ubuntu !important;
+   font-family: main-font !important;
 }
 
 /* Text before/after dropdown selectors of tables */
 label, select {
-   font-family: Ubuntu !important;
+   font-family: main-font !important;
 }
-
 .bootbox-body {
-   font-family: Ubuntu !important;
+   font-family: main-font !important;
 }
 
 /* Text header above tables */
 .theader h1 {
-   font-family: Arimo !important;
+   font-family: main-font-bold !important;
 }
 
 /* Domoticz logo upperleft corner */
@@ -67,297 +84,239 @@ label, select {
    visibility: hidden;
    position: relative;
  }
- 
-.brand:after{
+ .brand:after{
    visibility: visible;
    position: absolute;
    top: 0;
-   content: "MyHome"; /* Changes the header text "Domoticz" */
-   font-family: 'Damion', sans-serif;
+   content: "Domoticz";
+   font-family: header;
    font-size: 1.7em;
    font-weight: 200;
-   color: #FFF;
+   color: var(--white-text);
 }
-
 /* Version info */
 .brand h2 {
    float: left;
-   margin-left: 155px;
+   margin-left: 175px;
    margin-top: -23px;
    text-decoration: none;
    text-transform: none;
-   font-family: Arimo;
+   font-family: main-font;
    font-size: 0.55em;
    font-style: italic;
-   color: #FFF;
+   color: var(--white-text);
 }
-
-#timesun, #scenecontent {
-   font-family: Ubuntu;
-}
-/* Make the sunrise/ roomselector a bit more down */
 .bannercontent {
 	margin-top: 20px;
 }
 
+#timesun, #scenecontent {
+   font-family: main-font;
+}
+/* Navbar */ 
 .navbar .nav li a {
    text-decoration: none;
    text-transform: none;
    border-color: transparent;
-   font-family: Ubuntu !important;
+   font-family: main-font !important;
    padding: 10px;
    font-weight: normal !important;
    text-align: center;
-   color: #FFF;
-   background-color: #2B2E37;
+   color: var(--white-text);
+   background-color: var(--main-bg-color);
    background-image: none !important;
 }
-
+/* Color of menubar on top of page */
+.navbar-inverse .navbar-inner {
+   background-color: var(--main-item-bg-color); 
+   background-image: none;
+   background-repeat: no-repeat;
+   filter: none;
+}
 /* Make the navbar come a bit more down, so we have more room for the border around the buttons*/
 .navbar-inner {
   min-height: 44px;
 }
-
 .navbar .nav .dropdown-menu {
    border: 0px;
-   font-family: Roboto,sans-serif;
+   font-family: main-font;
    padding: 4px;
-   background-color: #2B2E37;
+   background-color: var(--main-bg-color);
    background-image: none;
 }
-
-
 .navbar .nav li a:hover {
-   border:1px solid #4a4b4a; 
-   background-color: #404552 !important;
+   border:1px solid; 
+   background-color: var(--main-bg-hover) !important;
    border-style: solid !important;
    border-width: 1px !important;
-   border-color: #676D79 !important;
+   border-color: var(--main-border-color) !important;
 }
-
-
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
-  color: #ffffff;
-  background-color: #2B2E37;
-  /* border: 1px solid #3093C7 !important; */
+  color: var(--white-text);
+  background-color: var(--main-bg-color);
 }
-
-/* Lines between menu items */
+/* Dropdown menu. Lines between menu items */
 .dropdown-menu .divider {
    *width: 100%;
    height: 1px;
    margin: 4px 1px;
    *margin: -5px 0 5px;
    overflow: hidden;
-   background-color: #353535;
-   border-bottom: 1px solid #676D79;
+   background-color: var(--main-border-color);
+   border-bottom: 1px solid var(--main-border-color);
 }  
 
-body table#itemtablenostatus tbody tr{
-   display: block;
-
-   width: 96%;
-   padding: 5px 5px 5px 5px;
-   margin: 2px 100% 5px 0;
-
-   border-style: none;
-   border-radius: 5px;
-
-   color: #DCDCDC;
-   background-color: #404552;
-
-   font-family: Arial, Helvetica, sans-serif;
-}
-
-body table#itemtablenostatus tr td:first-child + td{ 
-   margin: -27px 6px 0px 0px;
-}
-
-body table#itemtable tbody tr{
-   display: block;
-   width: 96%;
-   padding: 5px 5px 5px 5px;
-   margin: 2px 100% 5px 0;
-   border-style: none;
-   border-radius: 5px;
-   color: #DCDCDC;
-   background-color: #F1F5FA;
-   font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Hover state for blocks */
-table#itemtablenostatus tr:hover, table#itemtablenotype tr:hover, table#itemtabledoubleicon tr:hover, table#itemtable tr:hover, table#itemtablesmall tr:hover{
-   background-color: #4C4E56 !important;
-}
-
 /* Set color & font of 'On' and 'Off' in upper right corner of blocks. Also for title & lastupdate of block */
-td#bigtext, td#name, td#lastupdate{
-   color: #34363F !important;
-   font-family: Arimo !important;
+td#bigtext, td#name{
+   color: var(--bigtxt-color) !important;
+   font-family: main-font-bold !important;
 }
-
 td#lastupdate{
-   color: #DCDCDC !important;
-   font-family: Arimo !important;
+   color: var(--main-text-color) !important;
+   font-family: main-font !important;
 }
-
+body table tr td:first-child + td + td + td + td + td + td:before,
+body table tr td:first-child + td + td + td + td + td:before,
+body table tr td:first-child + td + td + td + td:before{
+	display: none;
+}
 p#copyright{
-   color: #DCDCDC !important;
-   font-family: Arimo !important;
+   color: var(--main-text-color) !important;
+   font-family: main-font !important;
 }
 
-/* Color of menubar on top of page */
-.navbar-inverse .navbar-inner {
-   background-color: #404552; 
-   background-image: none;
-   background-repeat: no-repeat;
-   filter: none;
-}
-
-.btnsmall {
-   background: #2B2E37;
-   border-color: #2B2E37;
-}
-
-/* Text color when mouseover button*/
-.btnsmall:hover{
-   color: #FFFFFF;
-}
 
 /* Make text inside 'Set mode' / 'Create virtual sensor' buttons not bold anymore */
 .label, .badge {
     font-weight: normal;
 }
 
-body table#itemtablenotype tbody tr{
-   color: #DCDCDC;
-   background-color: #404552;
-   font-family: Roboto, sans-serif important;
+body table#itemtablenostatus tbody tr,
+body table#itemtablenotype tbody tr,
+body table#itemtable tbody tr,
+body table#itemtablesmall tbody tr,
+body table#itemtablesmalldoubleicon tbody tr,
+body table#itemtablesmalltrippleicon tbody tr,
+body table#itemtabledoubleicon tbody tr,
+body table#itemtabletrippleicon tbody tr  {
+   color: var(--main-text-color);
+   background-color: var(--main-item-bg-color);
+   font-family: main-font !important;
 }
-
-body table#itemtablenotype tr td:first-child + td{ 
-   margin: -27px 6px 0px 0px;
-}
-
-
-body table#itemtablesmall tbody tr{
-   color: #DCDCDC;
-   background-color: #404552 !important;
-   font-family: Arimo !important;
-}
-
-body table#itemtablesmall tr td:first-child + td{ 
-   margin: -27px 6px 0px 0px;
-}
-
-body table#itemtabledoubleicon tbody tr, body table#itemtabletrippleicon tbody tr, body table#itemtablesmalldoubleicon tbody tr, body table#itemtablesmalltrippleicon tbody tr{
-   color: #DCDCDC;
-   background-color: #404552;
-   font-family: Roboto, sans-serif important;
-}
-
+body table#itemtable tr td:first-child + td,
+body table#itemtablenotype tr td:first-child + td,
+body table#itemtablesmall tr td:first-child + td,
 body table#itemtabledoubleicon tr td:first-child + td{ 
    margin: -27px 6px 0px 0px;
 }
-
-body table#itemtabledoubleicon tbody tr:hover, body table#itemtablesmalldoubleicon tbody tr:hover, body table#itemtabletrippleicon tbody tr:hover, body table#itemtablesmalltrippleicon tbody tr:hover{
-   border-color: #2B2C74;
-   background-color: #404552;
-   font-family: Roboto, sans-serif important;
-}
-
-body table#itemtable tbody tr{
-   background-color: #404552;
-}
-
-body table#itemtable tr td:first-child + td{ 
-   color: #404552;
-   margin: -27px 6px 0px 0px;
+table#itemtablenostatus tr:hover,
+table#itemtablenotype tr:hover,
+table#itemtabledoubleicon tr:hover,
+table#itemtable tr:hover, 
+table#itemtablesmall tr:hover,
+body table#itemtablenostatus tbody tr:hover,
+body table#itemtablenotype tbody tr:hover,
+body table#itemtable tbody tr:hover,
+body table#itemtablesmall tbody tr:hover,
+body table#itemtablesmalldoubleicon tbody tr:hover,
+body table#itemtablesmalltrippleicon tbody tr:hover,
+body table#itemtabledoubleicon tbody tr:hover,
+body table#itemtabletrippleicon tbody tr:hover {
+   border-color: var(--main-border-color);
+   background-color: var(--main-bg-hover);
 }
 
 /* Table rows even */
 tr.even {
-   background-color: #34363F;
-   color: #DCDCDC;
+   background-color: var(--main-bg-color);
+   color: var(--main-text-color);
 }
 
 /* Table rows odd */
 tr.odd {
-   background-color: #404552;
-   color: #DCDCDC;
-}
-select {
-	background-color: #2B2E37;
-	color: #fff;
-	border: 0;
+   background-color: var(--main-item-bg-color);
+   color: var(--main-text-color);
 }
 
+select {
+	background-color: var(--main-item-bg-color);
+	color: var(--white-text);
+	border: 0;
+}
+.dataTables_wrapper .dataTable tr{
+  border: 1px solid var(--main-border-color);
+}
+input[type="search"],
 .dataTables_length select {
-	background-color: #fff;
+	background-color: var(--white-bg-color);
 	color: #000;
 	border: 0;
 }
-
 div:not(.ui-dialog) input.ui-widget-content,
 .ui-widget-content select {
-	background-color: #283750;
+	background-color: var(--main-item-bg-color);
 	background-image: none !important;
 	border: none;
 }
-
 .ui-dialog, .ui-dialog-buttonpane, .ui-widget-content {
-	color: #ddd; /*!important;*/
+	color: var(--main-text-color); /*!important;*/
 	background-color: #013;
-	background-image: linear-gradient(to bottom, #001c38 0%,#0f0c2b 100%);
 	background-attachment: fixed;
 }
-
 .ui-dialog-titlebar,
 .ui-state-default:not(.ui-slider-handle),
 .ui-widget-header:not(.ui-slider-handle):not(.ui-slider-range),
 .ui-timepicker-div .ui-slider-handle {
-	background-color: #2B2E37;
-	background-image: url("images/tablebars_500x100.png") !important;
-	;
+	background-color: var(--main-bg-color);
 }
 
 /* Give selected table row a petrol blue color */
 table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
     background-color: #324979 !important;
-    color: #FFF;
-}
-
-.btnsmall {
-   color: #DCDCDC;
-   border-color: #333333;
-   border-style: solid;
-   border-width: thin;
+    color: var(--white-text);
 }
 
 #copyright p:after {
   content: "  | 'ThinkTheme' by DewGew";
 }
-
+/* Events editor buttons */
+#main-view > div > section.events-editor__editor > event-viewer > div.events-editor-file__header > form > div.btn-group > button,
+#main-view > div > section.events-editor__editor > event-viewer > div.events-editor-file__header > form > div.pull-right > div > button {
+   font-family: main-font !important;
+   border-radius: 1px;
+}
+/* Buttons */
 .btnstyle, .btnstylerev, .btnsmall, .btnstyle3, .btnstyle3-dis, .btn-default, .btn-primary, .btn-mini, .btn-info, .btn-warning, .btn-danger .btn-success, .btn-small.disabled, .ui-button-text, .submitbuttonp1usb {
-   font-family: Ubuntu !important;
+   font-family: main-font !important;
+   border-radius: 2px;
 }
-
+.ui-dialog-buttonset button {
+  background: var(--main-bg-hover) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 2px !important;
+}
 /* Grey-flatstyle background for disabled buttons (Update/Delete at 'Hardware' page) */
-.btnstyle3-dis {
-    background: #4C4E56;
+.btnstyle3-dis,
+.btnstyle3:disabled {
+    background: var(--main-bg-hover);
     color: #8E8E8E;
+	border-radius: 2px;
 }
 
-/* Flat style for blue 'Update' button */
-.btnstyle3 {
-    background: #3A87AD;
+/* Flat style for blue button */
+.btnstyle3, .btnstyle, .btnstylerev, .btn-info, .btn-primary {
+	background: none;
+    background-color: var(--main-button-color);
 }
 
 /* Flat style for purple 'All Devices' button at Hardware page */
 .btnstyle3-sel {
-    background: #6C519E;
+	background: none;
+    background-color: #6C519E;
+	border-radius: 2px;
 }
 
 /* Flat style for 'Apply settings' button at Settings page */
@@ -365,39 +324,47 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
     border: 1px solid transparent !important;
 }
 .btn-danger {
-    background-color: #B94A48 !important;
+	background: none;
+    background-color: #dc143c !important;
+	border-radius: 2px;
+	border-color: #dc143c;
+}
+
+.btnsmall {
+   color: var(--main-text-color);
+   border-color: var(--main-border-color);
+   border-style: solid;
+   border-width: thin;
+}
+.btnsmall {
+   background: var(--main-bg-color);
+   border-color: var(--main-border-color);
+}
+
+/* Text color when mouseover button*/
+.btnsmall:hover{
+   background: var(--main-bg-hover);
+   color: var(--white-text);
 }
 
 /* Color for enabled 'Notification' & 'Timers' button */
+#itemtable .btnsmall-sel,
+#itemtablenotype .btnsmall-sel,
+#itemtabledoubleicon .btnsmall-sel,
 #itemtablenostatus .btnsmall-sel {
-    background: #337AB7;
+    background: #51a351;
+	border-radius: 0;
 }
+/** End Buttons **/
 
 /* Dropdown boxes at 'Scene page' */
 #comboroom, #combotype, #combodevice, #combowhen, #combopriority, #combodatatimeout, #sensortype, #P1Baudrate {
-   font-family: Ubuntu !important;
+   font-family: main-font !important;
 }
 
 /* Text inside user editable text boxes */
 #devicename, #onaction, #offaction, #devicedescription, #ondelaytime, #offdelaytime {
-   font-family: Ubuntu !important;
-}
-
-/* Set color of text input fields */
-.text.ui-widget-content {
-   border: 1px solid #42434B !important;
-   background: #2B2E37 !important;
-   color: #FFF;
-}
-
-.ui-widget-content {
-   background: #2B2E37 !important;
-}
-
-/* Background colors */
-.row-fluid [class^="span"] {
-	background-color: #42434B; /*!important;*/
-	color: #fff !important;
+   font-family: main-font !important;
 }
 
 /*#protectiontable, 
@@ -432,73 +399,84 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
 #scenecontent #paramstable,
 #notificationparamstable, #hardwareparamstable,
 #eventparamstable {
-	background-color: #42434B;
-	border-top: 10px solid #42434B;
-	border-bottom: 10px solid #42434B;
+	background-color: var(--main-bg-color);
+	border-top: 10px solid var(--main-bg-color);
+	border-bottom: 10px solid var(--main-bg-color);
 }
 
+/* Set color of text input fields */
+#settings select, 
+.text.ui-widget-content {
+   border: 1px solid var(--main-border-color) !important;
+   background: var(--main-bg-color) !important;
+   color: var(--white-text);
+}
 /* Text at RFXCOM set mode page */
 #settings {
-   font-family: Ubuntu !important;
+   font-family: main-font !important;
 }
 
 /* Setup > Settings tabs */
 .tab-content {
   overflow: auto;
-  border: 1px solid #42434B;
+  border: 1px solid var(--main-item-bg-color);
   padding-left: 10px;
 }
 
 /* Style of tabs at Setup > Settings page */
+
+.row-fluid [class^="span"] {
+	background-color: var(--main-item-bg-color); /*!important;*/
+	color: var(--white-text) !important;
+}
 .sub-tabs > li > a {
-    color: #DCDCDC;
+    color: var(--main-text-color);
     cursor: pointer;
-    background-color: #404552;
+    background-color: var(--main-item-bg-color);
     border: 1px solid transparent;
+	border-radius: 2px;
 }
 
 .sub-tabs > .active > a {
-    color: #FFF;
-    background-color: #4C4E56;
+    color: var(--white-text);
+    background-color: var(--main-bg-hover);
     border: 1px solid transparent;
 }
 
 .nav > li > a:hover, .nav > li > a:focus {
-    background-color: #404552;
+    background-color: var(--main-bg-hover);
 }
 
 .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
-    border-color: #43A4D3 transparent transparent;
-    color: #FFF;
+    border-color: var(--main-border-color) transparent transparent;
+    color: var(--white-text);
 }
 
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
-    color: #FFF;
+    color: var(--white-text);
     cursor: default;
-    background-color: #4C4E56;
+    background-color: var(--main-bg-hover);
     border: 1px solid transparent;
     border-bottom-color: transparent;
 }
 
-/* Table header (second row) */
-.fg-toolbar.ui-toolbar.ui-widget-header.ui-helper-clearfix.ui-corner-tl.ui-corner-tr, .fg-toolbar.ui-toolbar.ui-widget-header.ui-helper-clearfix.ui-corner-bl.ui-corner-br, {
-    border: 1px solid !important;
-    background: #24262F !important;
-    border-color: transparent transparent #000 !important;
+/* Sliders */
+.ui-widget-content {
+   background: var(--main-bg-color) !important;
 }
 .dimslider {
-    border-color: #333 !important;
-    box-shadow: none !important;
+    border-color: var(--main-item-bg-color) !important;
+	box-shadow: none !important;
 }
 
 .dimslider .ui-slider-range {
     border-radius: inherit;
-}
+} 
 
 /* Different color & font for log window */
 div.log {
     background-color: #27292C;
-    font-family: "Droid Sans Mono", monospace !important;
+    font-family: main-font !important;
 }
 
 /* Font color for normal log lines */
@@ -508,6 +486,11 @@ div.log {
 
 /* Font settings for special log lines */
 .logstatus {
+    color: #21AA0B;
+    font-weight: 100 !important;
+}
+/* Font settings for error log lines */
+.logerror {
     color: #E36049;
     font-weight: 100 !important;
 }

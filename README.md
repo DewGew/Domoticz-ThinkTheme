@@ -1,5 +1,5 @@
 # Domoticz-ThinkTheme
-ThinkTheme V2 for Domoticz V3.8XXX
+ThinkTheme V2.1 for Domoticz V3.8XXX and above.
 
 Modyfied from [ThinkTheme in domoticz forum](http://www.domoticz.com/forum/viewtopic.php?f=8&t=7863)
 
@@ -8,5 +8,3 @@ Save the files below ' in /www/styles/ThinkTheme/ and then choose 'ThinkTheme' f
 # Screenshot
 ![alt tag](http://www.accentaplast.se/wordpress/wp-content/uploads/2017/11/ThinkTheme.jpg)
 ![alt tag](http://www.accentaplast.se/wordpress/wp-content/uploads/2017/11/ThinkTheme_settings.png)
-# Donate
-Do you appreciate my work and want to buy me a coffee? You can send Bitcoins to <b>1PS4MVjzMojF9xX472yc87QVaVmhai8jKA</b>
