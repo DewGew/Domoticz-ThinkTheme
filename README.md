@@ -9,5 +9,5 @@ Save the files below ' in /www/styles/ThinkTheme/ and then choose 'ThinkTheme' f
 ![alt tag](http://www.accentaplast.se/wordpress/wp-content/uploads/2017/11/ThinkTheme.jpg)
 ![alt tag](http://www.accentaplast.se/wordpress/wp-content/uploads/2017/11/ThinkTheme_settings.png)
 # Changelog
-- v2.1 Approvment and small changes in CSS
+- V2.1 Approvment and small changes in CSS
 - V2.0 First release. 
