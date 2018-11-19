@@ -47,6 +47,18 @@ $.ajax({
 						$('#main-view .item').each(function () {
 							let xyz = $(this).find('#lastupdate');
 							$(this).find("#lastupdate").timeago("update", xyz.text());
+							
+							if ($('#dashcontent').length == 0) {
+								let item = $(this).closest('.item');
+								var itemID = item.attr('id');
+								if (typeof(itemID) === 'undefined') {
+									itemID = item[0].offsetParent.id;
+								}
+								let type = $(this).find('#idno');
+								if (type.length == 0) {
+									$(this).find('#lastupdate').append('<i id="idno"></br>Idx: ' + itemID + '</i>');
+								}
+							}
 						});
 						
 						// <-- end custom functions to items(tiles)
