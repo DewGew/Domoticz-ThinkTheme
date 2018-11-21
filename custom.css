@@ -543,7 +543,12 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
 
 .dimslider .ui-slider-range {
     border-radius: inherit;
-} 
+}
+
+/* More space beneath dimslider, selector */
+.dimslider, .btn-group, .selectorlevels{
+	margin-bottom: 8px;
+}
 
 /* Different color & font for log window */
 div.log {
