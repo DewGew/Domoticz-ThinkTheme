@@ -356,22 +356,18 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
 	border-radius: 2px;
 	border-color: #dc143c;
 }
-
 .btnsmall {
    color: var(--main-text-color);
    border-color: var(--main-border-color);
-   border-style: solid;
-   border-width: thin;
-}
-.btnsmall {
    background: var(--main-bg-color);
-   border-color: var(--main-border-color);
 }
 
 /* Text color when mouseover button*/
 .btnsmall:hover{
    background: var(--main-bg-hover);
    color: var(--white-text);
+   border-style: solid;
+   border-width: thin;
 }
 
 /* Color for enabled 'Notification' & 'Timers' button */
