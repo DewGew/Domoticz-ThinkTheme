@@ -11,7 +11,7 @@ $.ajax({
 	dataType: 'script'
 });
 /* Uncomment below to use custom language for timeago */
-	jQuery.timeago.settings.strings = {
+/*	jQuery.timeago.settings.strings = {
 		
 
 		prefixAgo: "för",
@@ -31,6 +31,7 @@ $.ajax({
 		years: "%d år"
 		
 	 };
+*/
 
 (function () {
 	$(document).ready(function () {
