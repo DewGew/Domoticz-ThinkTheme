@@ -4,6 +4,7 @@
     "description": "This is a custom theme for Domoticz",
     "license": "GPL-2.0+",
     "version":"2.3.1",
+    "branch": "master",
     "author": "DewGew",
     "homepage": "http://www.domoticz.com",
     "wiki": "https://github.com/DewGew/Domoticz-ThinkTheme"
