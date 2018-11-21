@@ -258,7 +258,7 @@ body table#itemtable tr td:first-child + td,
 body table#itemtablenotype tr td:first-child + td,
 body table#itemtablesmall tr td:first-child + td,
 body table#itemtabledoubleicon tr td:first-child + td{ 
-   margin: -27px 6px 0px 0px;
+   margin: -29px 6px 0px 0px;
 }
 table#itemtablenostatus tr:hover,
 table#itemtablenotype tr:hover,
