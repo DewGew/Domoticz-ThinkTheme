@@ -358,6 +358,7 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
 }
 .btnsmall {
    color: var(--main-text-color);
+   border-radius: 5px;
    border-color: var(--main-border-color);
    background: var(--main-bg-color);
 }
@@ -376,7 +377,7 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
 #itemtabledoubleicon .btnsmall-sel,
 #itemtablenostatus .btnsmall-sel {
     background: #51a351;
-	border-radius: 0;
+    border-radius: 5px;
 }
 /** End Buttons **/
 
