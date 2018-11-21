@@ -1,6 +1,6 @@
-* 
+/* 
  
-	Custom functions for ThinkTheme
+	Custom js for ThinkTheme
 
 */
 
@@ -11,7 +11,7 @@ $.ajax({
 	dataType: 'script'
 });
 /* Uncomment below to use custom language for timeago */
-/* 	jQuery.timeago.settings.strings = {
+	jQuery.timeago.settings.strings = {
 		
 
 		prefixAgo: "för",
@@ -31,10 +31,21 @@ $.ajax({
 		years: "%d år"
 		
 	 };
- */
+
 (function () {
 	$(document).ready(function () {
-		// Add custom functions -->
+		// Add custom code -->
+		var isMobile = /Android|webOS|iPhone|iPad|iPod|ZuneWP7|BlackBerry/i.test(navigator.userAgent);
+
+		// Add searchbar
+		
+		if ($('dashcontent') || $('lightcontent') || $('scenecontent')|| $('utilitycontent') || $('weatherwidgets') || $('tempwidgets')){
+			if ($("#searchInput").length == 0){
+			$('<input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Filter Devices" title="Filter">').insertAfter('.navbar-inner');
+			}
+		}else{
+				$("#searchInput").remove();
+		}
 		
 		$(document).ajaxSuccess(function (event, xhr, settings) {
 			if (settings.url.startsWith('json.htm?type=devices') ||
@@ -42,13 +53,24 @@ $.ajax({
 				let counter = 0;
 				let intervalId = setInterval(function () {
 					if ($('#main-view').find('.item').length > 0) {
-						// add custom functions to items(tiles) -->
+						// Add custom functions to items(tiles) -->
 						
 						$('#main-view .item').each(function () {
-							let xyz = $(this).find('#lastupdate');
-							$(this).find("#lastupdate").timeago("update", xyz.text());
+											
+							// Time Ago -->
+							let lastupdated = $(this).find('#timeago');
+							let lastUpdateTime = $(this).find('#lastupdate');
+							if (lastupdated.length == 0) {
+								//$(this).find('table tbody tr').append('<td id="timeago" class="timeago"></td>');
+								$('<td id="timeago" class="timeago"></td>').insertBefore($(this).find('#lastupdate'));
+								$(this).find('#lastupdate').remove();
+							}
+							$(this).find("#timeago").timeago("update", lastUpdateTime.text());
+							// <-- End Time Ago
 							
-							if ($('#dashcontent').length == 0) {
+							// Idx no -->
+							
+							if ($('#dashcontent').length == 0 && isMobile == false) {
 								let item = $(this).closest('.item');
 								var itemID = item.attr('id');
 								if (typeof(itemID) === 'undefined') {
@@ -56,12 +78,13 @@ $.ajax({
 								}
 								let type = $(this).find('#idno');
 								if (type.length == 0) {
-									$(this).find('#lastupdate').append('<i id="idno"></br>Idx: ' + itemID + '</i>');
+									$(this).find('#timeago').append('<i id="idno"></br>Idx: ' + itemID + '</i>');
 								}
-							}
+							}// <-- Idx no
+							
 						});
-						
-						// <-- end custom functions to items(tiles)
+										
+						// <-- End custom functions to items(tiles)
 						clearInterval(intervalId);
 					} else {
 						counter++;
@@ -72,6 +95,20 @@ $.ajax({
 				}, 1000);
 			}
 		});
-		// <-- end custom functions 
+		
+		// <-- End custom code 
 	});
 })();
+
+// Javascript Functions -->
+
+function searchFunction() {
+	if ($('#dashcontent') || $('lightcontent') || $('scenecontent')|| $('utilitycontent') || $('weatherwidgets') || $('tempwidgets')){
+		var value = $('#searchInput').val().toLowerCase();
+		$("div .item").filter(function() {
+		  $(this).toggle($(this).find('#name').html().toLowerCase().indexOf(value) > -1)
+		});
+    };
+};
+
+// <-- End Javascript Functions
