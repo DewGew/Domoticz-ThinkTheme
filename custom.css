@@ -64,6 +64,28 @@ h1, h2 {
    color: var(--main-text-color);
 }
 
+/* Search */
+#searchInput {
+  position: relative;
+  float: right;
+  background-image: url('../images/searchicon.png');
+  background-color: transparent;
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 10%;
+  font-size: 12px;
+  color: #fff;
+  padding: 12px 0 8px 30px;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #fff;
+  margin-right: 12%;
+}
+#searchInput::placeholder {
+	color: #fff;
+	opacity: 0.5;
+}
+
 /* Text in tables */
 td {
    font-family: main-font !important;
