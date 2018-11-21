@@ -394,7 +394,6 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
 }
 
 .btnsmall {
-   color: var(--main-text-color);
    border-radius: 5px;
    border-color: var(--main-border-color);
    background: var(--main-bg-color);
