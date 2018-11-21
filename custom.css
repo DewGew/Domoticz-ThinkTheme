@@ -180,6 +180,11 @@ td#lastupdate{
    color: var(--main-text-color) !important;
    font-family: main-font !important;
 }
+td#timeago{
+   font-size: 80%;
+   color: var(--main-text-color);
+   font-family: main-font;
+}
 body table tr td:first-child + td + td + td + td + td + td:before,
 body table tr td:first-child + td + td + td + td + td:before,
 body table tr td:first-child + td + td + td + td:before{
@@ -189,7 +194,6 @@ p#copyright{
    color: var(--main-text-color) !important;
    font-family: main-font !important;
 }
-
 
 /* Make text inside 'Set mode' / 'Create virtual sensor' buttons not bold anymore */
 .label, .badge {
