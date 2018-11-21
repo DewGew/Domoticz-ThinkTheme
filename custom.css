@@ -416,6 +416,16 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
     background: #51a351;
 	border-radius: 5px;
 }
+#itemtable .btnsmall-sel:hover,
+#itemtablenotype .btnsmall-sel:hover,
+#itemtabledoubleicon .btnsmall-sel:hover,
+#itemtablenostatus .btnsmall-sel:hover {
+    background: var(--main-bg-hover);
+	border-radius: 5px;
+	border-color: var(--main-border-color);
+	border-style: solid;
+    border-width: thin;
+}
 /** End Buttons **/
 
 /* Dropdown boxes at 'Scene page' */
