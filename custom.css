@@ -222,7 +222,8 @@ td#lastupdate{
    font-family: Arimo !important;
 }
 td#status{
-	font-weight: none;
+	font-weight: bold !important;
+	line-height: 1.5;
 }
 p#copyright{
    color: #DCDCDC !important;
