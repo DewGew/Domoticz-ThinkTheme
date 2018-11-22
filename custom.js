@@ -19,6 +19,7 @@ $.ajax({
 });
 
 /* Uncomment below to use custom language for timeago */
+/*
 jQuery.timeago.settings.strings = {
 
 	prefixAgo: "för",
@@ -38,6 +39,7 @@ jQuery.timeago.settings.strings = {
 	years: "%d år"
 
 };
+*/
 
 setTimeout(update, 3000);
 
