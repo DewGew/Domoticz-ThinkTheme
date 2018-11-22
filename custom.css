@@ -223,7 +223,7 @@ td#lastupdate{
 }
 td#status{
 	font-weight: bold !important;
-	line-height: 1.5;
+	line-height: 1.5 !important;
 }
 p#copyright{
    color: #DCDCDC !important;
