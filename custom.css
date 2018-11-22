@@ -1,74 +1,46 @@
+/* Don't remove these lines! --> */
+@import url("../css/legacy.css");
+@import url("base.css");
+@import url(https://fonts.googleapis.com/css?family=Damion);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+@import url(https://fonts.googleapis.com/css?family=Arimo);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+/* <-- Don't remove this line! */
+
 /*
 'ThinkTheme' theme for Domoticz
 */
-
-@import url("../css/legacy.css"); /* Don't remove this line! */
-@import url("base.css"); /* Don't remove this line! */
-/*@import url("navigation_main_sidebar.css");
-
-/* Colors */
-:root {
-	--main-bg-color: #2B2E37;
-	--main-item-bg-color: #404552;
-	--main-border-color: #676D79;
-	--main-bg-hover: #4C4E56;
-	--main-text-color: #DCDCDC;
-	--bigtxt-color: #000;
-	--white-text: #fff;
-	--white-bg-color: #fff;
-	--main-button-color: #3A87AD; 
-}
-
-/* Fonts */
-@font-face {
-    font-family: main-font;
-    src: url(font/OpenSans-Regular.ttf);
-}
-@font-face {
-    font-family: main-font-bold;
-    src: url(font/OpenSans-SemiBold.ttf);
-}
-@font-face {
-    font-family: header;
-    src: url(font/Damion-Regular.ttf);
-}
-
-/* Custom css */
 body {
-   background: var(--main-bg-color) !important;
-   font-family: main-font !important;
-   color: var(--main-text-color); /*!important;*/
+   background: #2B2E37;
+   font-family: Arimo !important;
+   color: #ddd; /*!important;*/
+   background-color: #2B2E37 !important;
 }
-#bstatus{
-	height: 100px;
+#timesun, #scenecontent {
+   font-family: Ubuntu;
+}
+#copyright a {
+   color: #FFF; 
+}
+#copyright p {
+   font-family: Ubuntu, sans-serif !important;
+   font-size: 1em;
+   color: #6A6A6A;
+   font-style: italic;
+}
+#copyright p:after {
+  content: "  | 'ThinkTheme' by DewGew";
 }
 #aboutcontent #canvas2 {
 	display:none;
-}
-#copyright a {
-   color: var(--white-text); 
-}
-#copyright p {
-   font-family: main-font !important;
-   font-size: 1em;
-   color: var(--main-border-color);
-   font-style: italic;
-}
-.warning-text {
-   color: yellow;
-   font-weight: normal;
-}
-
-h1, h2 {
-   font-family: main-font-bold;
-   color: var(--main-text-color);
 }
 /* Search */
 #searchInput {
   position: relative;
   float: right;
   background-image: url('../images/searchicon.png');
-  background-color: transparent;
+  background-color: #2B2E37;
   background-position: 10px 12px;
   background-repeat: no-repeat;
   width: 10%;
@@ -76,30 +48,39 @@ h1, h2 {
   color: #fff;
   padding: 12px 0 8px 30px;
   outline: 0;
-  border-width: 0 0 1px;
-  border-color: #fff;
+  border: 1px solid #4a4b4a;
+  border-radius: 5px;
   margin-right: 12%;
 }
 #searchInput::placeholder {
 	color: #fff;
 	opacity: 0.5;
 }
+.warning-text {
+   color: yellow;
+   font-weight: normal;
+}
+h2 {
+   font-family: Arimo, sans-serif;
+   color: #DCDCDC;
+}
+
 /* Text in tables */
 td {
-   font-family: main-font !important;
+   font-family: Ubuntu !important;
 }
 
 /* Text before/after dropdown selectors of tables */
 label, select {
-   font-family: main-font !important;
+   font-family: Ubuntu !important;
 }
 .bootbox-body {
-   font-family: main-font !important;
+   font-family: Ubuntu !important;
 }
 
 /* Text header above tables */
 .theader h1 {
-   font-family: main-font-bold !important;
+   font-family: Arimo !important;
 }
 
 /* Domoticz logo upperleft corner */
@@ -111,11 +92,11 @@ label, select {
    visibility: visible;
    position: absolute;
    top: 0;
-   content: "Domoticz";
-   font-family: header;
+   content: "Domoticz"; /* Changes the header text "Domoticz" */
+   font-family: 'Damion', sans-serif;
    font-size: 1.7em;
    font-weight: 200;
-   color: var(--white-text);
+   color: #FFF;
 }
 /* Version info */
 .brand h2 {
@@ -124,34 +105,31 @@ label, select {
    margin-top: -23px;
    text-decoration: none;
    text-transform: none;
-   font-family: main-font;
+   font-family: Arimo;
    font-size: 0.55em;
    font-style: italic;
-   color: var(--white-text);
+   color: #FFF;
 }
 .bannercontent {
 	margin-top: 20px;
 }
 
-#timesun, #scenecontent {
-   font-family: main-font;
-}
 /* Navbar */ 
 .navbar .nav li a {
    text-decoration: none;
    text-transform: none;
    border-color: transparent;
-   font-family: main-font !important;
+   font-family: Ubuntu !important;
    padding: 10px;
    font-weight: normal !important;
    text-align: center;
-   color: var(--white-text);
-   background-color: var(--main-bg-color);
+   color: #FFF;
+   background-color: #2B2E37;
    background-image: none !important;
 }
 /* Color of menubar on top of page */
 .navbar-inverse .navbar-inner {
-   background-color: var(--main-item-bg-color); 
+   background-color: #404552; 
    background-image: none;
    background-repeat: no-repeat;
    filter: none;
@@ -162,23 +140,24 @@ label, select {
 }
 .navbar .nav .dropdown-menu {
    border: 0px;
-   font-family: main-font;
+   font-family: Roboto,sans-serif;
    padding: 4px;
-   background-color: var(--main-bg-color);
+   background-color: #2B2E37;
    background-image: none;
 }
 .navbar .nav li a:hover {
-   border:1px solid; 
-   background-color: var(--main-bg-hover) !important;
+   border:1px solid #4a4b4a; 
+   background-color: #404552 !important;
    border-style: solid !important;
    border-width: 1px !important;
-   border-color: var(--main-border-color) !important;
+   border-color: #676D79 !important;
 }
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
-  color: var(--white-text);
-  background-color: var(--main-bg-color);
+  color: #ffffff;
+  background-color: #2B2E37;
+  /* border: 1px solid #3093C7 !important; */
 }
 /* Dropdown menu. Lines between menu items */
 .dropdown-menu .divider {
@@ -187,62 +166,94 @@ label, select {
    margin: 4px 1px;
    *margin: -5px 0 5px;
    overflow: hidden;
-   background-color: var(--main-border-color);
-   border-bottom: 1px solid var(--main-border-color);
+   background-color: #353535;
+   border-bottom: 1px solid #676D79;
 }  
 
-/* Set color & font of 'On' and 'Off' in upper right corner of blocks. Also for title & lastupdate of block */
-td#name{
-   color: var(--bigtxt-color) !important;
-   font-family: main-font !important;
+body table#itemtablenostatus tbody tr{
+   display: block;
+
+   width: 96%;
+   padding: 5px 5px 5px 5px;
+   margin: 2px 100% 5px 0;
+
+   border-style: none;
+   border-radius: 5px;
+
+   color: #DCDCDC;
+   background-color: #404552;
+
+   font-family: Arial, Helvetica, sans-serif;
 }
-td#bigtext{
-   color: var(--bigtxt-color) !important;
-   font-family: main-font-bold !important;
+body table#itemtablenostatus tr td:first-child + td{ 
+   margin: -27px 6px 0px 0px;
+}
+body table#itemtable tbody tr{
+   display: block;
+   width: 96%;
+   padding: 5px 5px 5px 5px;
+   margin: 2px 100% 5px 0;
+   border-style: none;
+   border-radius: 5px;
+   color: #DCDCDC;
+   background-color: #F1F5FA;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hover state for blocks */
+table#itemtable tr:hover,
+table#itemtablenotype tr:hover,
+table#itemtablenostatus tr:hover,
+table#itemtabledoubleicon tr:hover,
+table#itemtabletrippleicon tr:hover,
+table#itemtablesmall tr:hover,
+table#itemtablesmalldoubleicon tr:hover,
+table#itemtablesmalltrippleicon tr:hover {
+   background-color: #4C4E56 !important;
+}
+
+/* Set color & font of 'On' and 'Off' in upper right corner of blocks. Also for title & lastupdate of block */
+td#bigtext, td#name, td#lastupdate{
+   color: #34363F !important;
+   font-family: Arimo !important;
 }
 td#lastupdate{
-   color: var(--main-text-color) !important;
-   font-family: main-font !important;
+   color: #DCDCDC !important;
+   font-family: Arimo !important;
+}
+td#status{
+	font-weight: none;
+}
+p#copyright{
+   color: #DCDCDC !important;
+   font-family: Arimo !important;
 }
 td#timeago{
    font-size: 80%;
-   color: var(--main-text-color);
-   font-family: main-font;
+   color: #DCDCDC;
+   font-family: Arimo;
 }
 body table tr td:first-child + td + td + td + td + td + td:before,
 body table tr td:first-child + td + td + td + td + td:before,
 body table tr td:first-child + td + td + td + td:before{
 	display: none;
 }
-p#copyright{
-   color: var(--main-text-color) !important;
-   font-family: main-font !important;
-}
-
 
 /* Make text inside 'Set mode' / 'Create virtual sensor' buttons not bold anymore */
 .label, .badge {
     font-weight: normal;
 }
-/* Background around Bigtext */
-body table#itemtable tr td:first-child,
-body table#itemtablenotype tr td:first-child,
-body table#itemtablenostatus tr td:first-child,
-body table#itemtabledoubleicon tr td:first-child,
-body table#itemtabletrippleicon tr td:first-child,
-body table#itemtablesmall tr td:first-child,
-body table#itemtablesmalldoubleicon tr td:first-child,
-body table#itemtablesmalltrippleicon tr td:first-child {
-	border-radius: 5px;
+
+body table#itemtablenotype tbody tr{
+   color: #DCDCDC;
+   background-color: #404552;
+   font-family: Roboto, sans-serif important;
 }
-div.item.statusTimeout {
-	
-}
-div.item.statusLowBattery {
-	
-}
-div.item.statusProtected {
-	
+
+body table#itemtablesmall tbody tr{
+   color: #DCDCDC;
+   background-color: #404552 !important;
+   font-family: Arimo !important;
 }
 
 body table#itemtablenostatus tbody tr,
@@ -253,36 +264,15 @@ body table#itemtablesmalldoubleicon tbody tr,
 body table#itemtablesmalltrippleicon tbody tr,
 body table#itemtabledoubleicon tbody tr,
 body table#itemtabletrippleicon tbody tr  {
-   color: var(--main-text-color);
-   background-color: var(--main-item-bg-color);
-   font-family: main-font !important;
+   color: #DCDCDC;
+   background-color: #404552;
+   font-family: Roboto, sans-serif important;
 }
-body table#itemtable tr td:first-child,
-body table#itemtablenostatus tr td:first-child,
-body table#itemtablenotype tr td:first-child,
-body table#itemtabledoubleicon tr td:first-child,
-body table#itemtabletrippleicon tr td:first-child{
-	height: 1.4em;
-}
-body table#itemtable tr td:first-child + td,
 body table#itemtablenotype tr td:first-child + td,
-body table#itemtablenostatus tr td:first-child + td,
-body table#itemtabledoubleicon tr td:first-child + td,
-body table#itemtabletrippleicon tr td:first-child + td{ 
-   margin: -32px 6px 0px 0px;
-}
 body table#itemtablesmall tr td:first-child + td,
-body table#itemtablesmalldoubleicon tr td:first-child + td,
-body table#itemtablesmalltrippleicon tr td:first-child + td{
-	 margin: -29px 6px 0px 0px;
+body table#itemtabledoubleicon tr td:first-child + td{ 
+   margin: -27px 6px 0px 0px;
 }
-
-
-table#itemtablenostatus tr:hover,
-table#itemtablenotype tr:hover,
-table#itemtabledoubleicon tr:hover,
-table#itemtable tr:hover, 
-table#itemtablesmall tr:hover,
 body table#itemtablenostatus tbody tr:hover,
 body table#itemtablenotype tbody tr:hover,
 body table#itemtable tbody tr:hover,
@@ -291,44 +281,52 @@ body table#itemtablesmalldoubleicon tbody tr:hover,
 body table#itemtablesmalltrippleicon tbody tr:hover,
 body table#itemtabledoubleicon tbody tr:hover,
 body table#itemtabletrippleicon tbody tr:hover {
-   border-color: var(--main-border-color);
-   background-color: var(--main-bg-hover);
+   border-color: #2B2C74;
+   background-color: #404552;
+   font-family: Roboto, sans-serif important;
+}
+body table#itemtable tbody tr{
+   background-color: #404552;
+}
+body table#itemtable tr td:first-child + td { 
+   color: #404552;
+   margin: -27px 6px 0px 0px;
 }
 
 /* Table rows even */
 tr.even {
-   background-color: var(--main-bg-color);
-   color: var(--main-text-color);
+   background-color: #34363F;
+   color: #DCDCDC;
 }
-
+tr.even td.sorting_1{
+	background-color: #34363F;
+	color: #DCDCDC;
+}
 /* Table rows odd */
-tr.odd {
-   background-color: var(--main-item-bg-color);
-   color: var(--main-text-color);
+tr.odd,
+tr.odd td.sorting_1 {
+   background-color: #404552;
+   color: #DCDCDC;
 }
 
 select {
-	background-color: var(--main-item-bg-color);
-	color: var(--white-text);
+	background-color: #42434B;
+	color: #fff;
 	border: 0;
 }
-.dataTables_wrapper .dataTable tr{
-  border: 1px solid var(--main-border-color);
-}
-input[type="search"],
 .dataTables_length select {
-	background-color: var(--white-bg-color);
+	background-color: #fff;
 	color: #000;
 	border: 0;
 }
 div:not(.ui-dialog) input.ui-widget-content,
 .ui-widget-content select {
-	background-color: var(--main-item-bg-color);
+	background-color: #283750;
 	background-image: none !important;
 	border: none;
 }
 .ui-dialog, .ui-dialog-buttonpane, .ui-widget-content {
-	color: var(--main-text-color); /*!important;*/
+	color: #ddd; /*!important;*/
 	background-color: #013;
 	background-attachment: fixed;
 }
@@ -336,54 +334,76 @@ div:not(.ui-dialog) input.ui-widget-content,
 .ui-state-default:not(.ui-slider-handle),
 .ui-widget-header:not(.ui-slider-handle):not(.ui-slider-range),
 .ui-timepicker-div .ui-slider-handle {
-	background-color: var(--main-bg-color);
+	background-color: #2B2E37;
 }
 
 /* Give selected table row a petrol blue color */
 table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
     background-color: #324979 !important;
-    color: var(--white-text);
+    color: #FFF;
 }
-
-#copyright p:after {
-  content: "  | 'ThinkTheme' by DewGew";
+.dimslider {
+	position: relative;
+	box-shadow: none !important;
 }
+/* More space beneath dimslider, selector */
+.dimslider, .btn-group, .selectorlevels{
+	margin-bottom: 8px;
+}
+/* Buttons */
 /* Events editor buttons */
 #main-view > div > section.events-editor__editor > event-viewer > div.events-editor-file__header > form > div.btn-group > button,
 #main-view > div > section.events-editor__editor > event-viewer > div.events-editor-file__header > form > div.pull-right > div > button {
-   font-family: main-font !important;
-   border-radius: 1px;
+   font-family: Ubuntu !important;
+   border-radius: 2px;
 }
-/* Buttons */
-.btnstyle, .btnstylerev, .btnsmall, .btnstyle3, .btnstyle3-dis, .btn-default, .btn-primary, .btn-mini, .btn-info, .btn-warning, .btn-danger .btn-success, .btn-small.disabled, .ui-button-text, .submitbuttonp1usb {
-   font-family: main-font !important;
+.btnsmall {
+   font-family: Ubuntu !important;
+   background: #2B2E37;
+   border-color: #2B2E37;
+   border-style: solid;
+   border-width: thin;
+}
+.btnsmall:hover{
+   color: #FFF;
+}
+.ui-button,
+.ui-button:hover {
+	background: none;
+	background-color: #2B2E37;
+}
+.bnt-group {
+	font-family: Ubuntu !important;
+}
+
+.btnstyle, .btnstylerev, .btnstyle3, .btnstyle3-dis, .btn-default, .btn-primary, .btn-mini, .btn-info, .btn-warning, .btn-danger .btn-success, .ui-button-text, .submitbuttonp1usb {
+   font-family: Ubuntu !important;
    border-radius: 2px;
 }
 .ui-dialog-buttonset button {
-  background: var(--main-bg-hover) !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 2px !important;
+	background: #3A87AD !important;
+	color: #fff !important;
+	border: none !important;
+	border-radius: 2px !important;
 }
 /* Grey-flatstyle background for disabled buttons (Update/Delete at 'Hardware' page) */
-.btnstyle3-dis,
-.btnstyle3:disabled {
-    background: var(--main-bg-hover);
+.btnstyle3:disabled,
+.btnstyle3-dis {
+    background: #4C4E56;
     color: #8E8E8E;
 	border-radius: 2px;
 }
 
-/* Flat style for blue button */
-.btnstyle3, .btnstyle, .btnstylerev, .btn-info, .btn-primary {
-	background: none;
-    background-color: var(--main-button-color);
+/* Flat style for blue 'Update' button */
+.btnstyle3, .btnstylerev, .btnstyle {
+    background: #3A87AD;
 }
-
+.btnstyle3[data-i18n="Delete"] {
+    background: #B94A48;
+}
 /* Flat style for purple 'All Devices' button at Hardware page */
 .btnstyle3-sel {
-	background: none;
-    background-color: #6C519E;
-	border-radius: 2px;
+    background: #6C519E;
 }
 
 /* Flat style for 'Apply settings' button at Settings page */
@@ -391,54 +411,39 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
     border: 1px solid transparent !important;
 }
 .btn-danger {
-	background: none;
-    background-color: #dc143c !important;
-	border-radius: 2px;
-	border-color: #dc143c;
-}
-
-.btnsmall {
-   border-radius: 5px;
-   border-color: var(--main-border-color);
-   background: var(--main-bg-color);
-}
-
-/* Text color when mouseover button*/
-.btnsmall:hover{
-   background: var(--main-bg-hover);
-   color: var(--white-text);
-   border-style: solid;
-   border-width: thin;
+    background-color: #B94A48 !important;
 }
 
 /* Color for enabled 'Notification' & 'Timers' button */
-#itemtable .btnsmall-sel,
-#itemtablenotype .btnsmall-sel,
-#itemtabledoubleicon .btnsmall-sel,
 #itemtablenostatus .btnsmall-sel {
-    background: #51a351;
-	border-radius: 5px;
+    background: #337AB7;
 }
-#itemtable .btnsmall-sel:hover,
-#itemtablenotype .btnsmall-sel:hover,
-#itemtabledoubleicon .btnsmall-sel:hover,
-#itemtablenostatus .btnsmall-sel:hover {
-    background: var(--main-bg-hover);
-	border-radius: 5px;
-	border-color: var(--main-border-color);
-	border-style: solid;
-    border-width: thin;
-}
-/** End Buttons **/
 
 /* Dropdown boxes at 'Scene page' */
 #comboroom, #combotype, #combodevice, #combowhen, #combopriority, #combodatatimeout, #sensortype, #P1Baudrate {
-   font-family: main-font !important;
+   font-family: Ubuntu !important;
 }
 
 /* Text inside user editable text boxes */
 #devicename, #onaction, #offaction, #devicedescription, #ondelaytime, #offdelaytime {
-   font-family: main-font !important;
+   font-family: Ubuntu !important;
+}
+
+/* Set color of text input fields */
+.text.ui-widget-content {
+   border: 1px solid #42434B !important;
+   background: #2B2E37 !important;
+   color: #FFF;
+}
+
+.ui-widget-content {
+   background: #2B2E37 !important;
+}
+
+/* Background colors */
+.row-fluid [class^="span"] {
+	background-color: #42434B; /*!important;*/
+	color: #fff !important;
 }
 
 /*#protectiontable, 
@@ -473,90 +478,85 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
 #scenecontent #paramstable,
 #notificationparamstable, #hardwareparamstable,
 #eventparamstable {
-	background-color: var(--main-bg-color);
-	border-top: 10px solid var(--main-bg-color);
-	border-bottom: 10px solid var(--main-bg-color);
+	background-color: #2B2E37;
+	border-top: 10px solid #2B2E37;
+	border-bottom: 10px solid #2B2E37;
 }
-
 /* Set color of text input fields */
-#settings select, 
+#settings select,
+#settings input {
+	border: 1px solid #4C4E56 !important;
+	background: #2B2E37 !important;
+	color: #fff;
+} 
 .text.ui-widget-content {
-   border: 1px solid var(--main-border-color) !important;
-   background: var(--main-bg-color) !important;
-   color: var(--white-text);
+   border: 1px solid #4C4E56 !important;
+   background: #42434B !important;
+   color: #fff;
 }
 /* Text at RFXCOM set mode page */
 #settings {
-   font-family: main-font !important;
+   font-family: Ubuntu !important;
 }
 
 /* Setup > Settings tabs */
 .tab-content {
   overflow: auto;
-  border: 1px solid var(--main-item-bg-color);
+  border: 1px solid #42434B;
   padding-left: 10px;
 }
 
 /* Style of tabs at Setup > Settings page */
-
-.row-fluid [class^="span"] {
-	background-color: var(--main-item-bg-color); /*!important;*/
-	color: var(--white-text) !important;
-}
 .sub-tabs > li > a {
-    color: var(--main-text-color);
+    color: #DCDCDC;
     cursor: pointer;
-    background-color: var(--main-item-bg-color);
+    background-color: #404552;
     border: 1px solid transparent;
-	border-radius: 2px;
 }
 
 .sub-tabs > .active > a {
-    color: var(--white-text);
-    background-color: var(--main-bg-hover);
+    color: #FFF;
+    background-color: #4C4E56;
     border: 1px solid transparent;
 }
 
 .nav > li > a:hover, .nav > li > a:focus {
-    background-color: var(--main-bg-hover);
+    background-color: #404552;
 }
 
 .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
-    border-color: var(--main-border-color) transparent transparent;
-    color: var(--white-text);
+    border-color: #43A4D3 transparent transparent;
+    color: #FFF;
 }
 
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
-    color: var(--white-text);
+    color: #FFF;
     cursor: default;
-    background-color: var(--main-bg-hover);
+    background-color: #4C4E56;
     border: 1px solid transparent;
     border-bottom-color: transparent;
 }
 
-/* Sliders */
-.ui-widget-content {
-   background: var(--main-bg-color) !important;
+Table header (second row)
+.fg-toolbar.ui-toolbar.ui-widget-header.ui-helper-clearfix.ui-corner-tl.ui-corner-tr .fg-toolbar.ui-toolbar.ui-widget-header.ui-helper-clearfix.ui-corner-bl.ui-corner-br {
+    border: 1px solid !important;
+    background: #24262F !important;
+    border-color: transparent transparent #000 !important;
 }
+
 .dimslider {
-	position: relative;
-    border-color: var(--main-item-bg-color) !important;
+    border-color: #333 !important;
 	box-shadow: none !important;
 }
 
 .dimslider .ui-slider-range {
     border-radius: inherit;
-}
-
-/* More space beneath dimslider, selector */
-.dimslider, .btn-group, .selectorlevels{
-	margin-bottom: 8px;
-}
+} 
 
 /* Different color & font for log window */
 div.log {
     background-color: #27292C;
-    font-family: main-font !important;
+    font-family: "Droid Sans Mono", monospace !important;
 }
 
 /* Font color for normal log lines */
@@ -567,6 +567,7 @@ div.log {
 /* Font settings for special log lines */
 .logstatus {
     color: #21AA0B;
+	/* color: #FFF632; */
     font-weight: 100 !important;
 }
 /* Font settings for error log lines */
