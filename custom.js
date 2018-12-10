@@ -48,17 +48,19 @@ setTimeout(update, 3000);
 		// Add custom code -->
 		var isMobile = /Android|webOS|iPhone|iPad|iPod|ZuneWP7|BlackBerry/i.test(navigator.userAgent);
 
-		// Add searchbar
-
-		if ($('dashcontent') || $('lightcontent') || $('scenecontent') || $('utilitycontent') || $('weatherwidgets') || $('tempwidgets')) {
-			if ($("#searchInput").length == 0) {
-				$('<input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Filter Devices" title="Filter">').insertAfter('.navbar-inner');
-			}
-		} else {
-			$("#searchInput").remove();
-		}
-
 		$(document).ajaxSuccess(function (event, xhr, settings) {
+			
+            	var pagedetect = window.location.href.split("/#/")[1].toLowerCase();
+
+            	// Add searchbar
+           	if (pagedetect == 'dashboard' || pagedetect == 'lightswitches' || pagedetect == 'scenes' || pagedetect == 'temperature' || pagedetect == 'weather' || pagedetect == 'utility'){
+          		if ($("#searchInput").length == 0) {
+             	  		$('<input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Filter Devices" title="Filter">').insertAfter('.navbar-inner');
+       	        	}
+    	        }else {
+     	        	$("#searchInput").remove();
+    	        }
+
 			if (settings.url.startsWith('json.htm?type=devices') ||
 				settings.url.startsWith('json.htm?type=scenes')) {
 				let counter = 0;
