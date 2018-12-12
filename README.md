@@ -1,7 +1,7 @@
 # Domoticz-ThinkTheme
 ![alt tag](https://img.shields.io/badge/dynamic/json.svg?label=Version&url=https%3A%2F%2Fraw.githubusercontent.com%2FDewGew%2FDomoticz-ThinkTheme%2Fmaster%2Ftheme.json&query=version&colorB=blue)
 
-ThinkTheme V2.4.2 for Domoticz V3.8XXX and above
+ThinkTheme for Domoticz V3.8XXX and above
 
 Modyfied from [ThinkTheme in domoticz forum](http://www.domoticz.com/forum/viewtopic.php?f=8&t=7863)
 
