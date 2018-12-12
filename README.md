@@ -1,6 +1,6 @@
 # Domoticz-ThinkTheme
 ThinkTheme V2.4.2 for Domoticz V3.8XXX and above
-
+https://img.shields.io/badge/version-2.4.2-blue.svg
 Modyfied from [ThinkTheme in domoticz forum](http://www.domoticz.com/forum/viewtopic.php?f=8&t=7863)
 
 Save the files in `../www/styles/ThinkTheme/` and then choose 'ThinkTheme' from Setup > Settings > Theme. The icons are from this [topic](http://domoticz.com/forum/viewtopic.php?f=8&t=7749) but the theme also works fine with just the stock Domoticz icons. Copy the icons to `../www/styles/ThinkTheme/images/`
