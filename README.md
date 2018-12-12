@@ -1,5 +1,5 @@
 # Domoticz-ThinkTheme
-![alt tag](https://img.shields.io/badge/version-2.4.2-blue.svg)
+![alt tag](https://img.shields.io/badge/Version-2.4.2-blue.svg)
 
 ThinkTheme V2.4.2 for Domoticz V3.8XXX and above
 
