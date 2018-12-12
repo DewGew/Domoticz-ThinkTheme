@@ -13,7 +13,7 @@ git clone https://github.com/DewGew/Domoticz-ThinkTheme ThinkTheme
 ```
 ## Update theme
 ```
-cd home/${USER}/domoticz/www/styles
+cd home/${USER}/domoticz/www/styles/ThinkTheme
 git pull
 ```
 
