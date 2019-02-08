@@ -10,12 +10,12 @@ Save the files in `../www/styles/ThinkTheme/` and then choose 'ThinkTheme' from 
 ## Installation with git
 NOTE: "${USER}" will automatically take your username. No need to change that. Just copy and paste.
 ```
-cd home/${USER}/domoticz/www/styles
+cd /home/${USER}/domoticz/www/styles
 git clone https://github.com/DewGew/Domoticz-ThinkTheme ThinkTheme
 ```
 ## Update theme
 ```
-cd home/${USER}/domoticz/www/styles/ThinkTheme
+cd /home/${USER}/domoticz/www/styles/ThinkTheme
 git pull
 ```
 
