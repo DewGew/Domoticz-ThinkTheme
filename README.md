@@ -1,5 +1,4 @@
 # ThinkTheme
-![alt tag](https://img.shields.io/badge/dynamic/json.svg?label=Version&url=https%3A%2F%2Fraw.githubusercontent.com%2FDewGew%2FDomoticz-ThinkTheme%2Fmaster%2Ftheme.json&query=version&colorB=blue)
 
 ThinkTheme for Domoticz V3.8XXX and above
 
