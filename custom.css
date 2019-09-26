@@ -11,6 +11,7 @@
 /*
 'ThinkTheme' theme for Domoticz
 */
+/* Header */
 body {
    background: #2B2E37;
    font-family: Arimo !important;
@@ -40,10 +41,10 @@ body {
   position: relative;
   float: right;
   background-image: url('../images/searchicon.png');
-  background-color: #2B2E37;
+  background-color: #404552;
   background-position: 10px 12px;
   background-repeat: no-repeat;
-  width: 10%;
+  width: 20%;
   font-size: 12px;
   color: #fff;
   padding: 12px 0 8px 30px;
@@ -82,7 +83,16 @@ label, select {
 .theader h1 {
    font-family: Arimo !important;
 }
+header.logo {
+    background: #2B2E37;
+    /*background: linear-gradient(to right, #2B2E37 0%, #404552 100%);*/
+}
 
+.container-logo {
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+}
 /* Domoticz logo upperleft corner */
 .brand h1 {
    visibility: hidden;
@@ -91,7 +101,7 @@ label, select {
  .brand:after{
    visibility: visible;
    position: absolute;
-   top: 0;
+   top: 43px;
    content: "Domoticz"; /* Changes the header text "Domoticz" */
    font-family: 'Damion', sans-serif;
    font-size: 1.7em;
@@ -102,7 +112,6 @@ label, select {
 .brand h2 {
    float: left;
    margin-left: 150px;
-   margin-top: -23px;
    text-decoration: none;
    text-transform: none;
    font-family: Arimo;
