@@ -41,13 +41,30 @@ setTimeout(update, 3000);
 
 		$(document).ajaxSuccess(function (event, xhr, settings) {
 			
-            	var pagedetect = window.location.href.split("/#/")[1].toLowerCase();
-
+            var pagedetect = window.location.href.split("/#/")[1].toLowerCase();
+            if ($(".container-logo").length == 0) {
+                var containerLogo = '<header class="logo"><div class="container-logo">';
+                containerLogo += "</div></header>";
+                $(containerLogo).insertBefore(".navbar-inner");
+            }
             	// Add searchbar
            	if (pagedetect == 'dashboard' || pagedetect == 'lightswitches' || pagedetect == 'scenes' || pagedetect == 'temperature' || pagedetect == 'weather' || pagedetect == 'utility'){
           		if ($("#searchInput").length == 0) {
-             	  		$('<input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Filter Devices" title="Filter">').insertAfter('.navbar-inner');
-       	        	}
+                        $("#appnavbar")
+             	  		$('<input type="text" id="searchInput" autocomplete="off" onkeyup="searchFunction()" placeholder="Filter Devices" title="Filter">').appendTo('.container-logo');
+                        $("#search").click(function() {
+                            $("#searchInput").focus();
+                        });
+                        $("#searchInput").keyup(function(event) {
+                            if (event.keyCode === 13) {
+                                $("#searchInput").blur();
+                            }
+                            if (event.keyCode === 27) {
+                                $("#searchInput").val("");
+                                $("#searchInput").keyup();
+                            }
+                        });
+                    }
     	        }else {
      	        	$("#searchInput").remove();
     	        }
@@ -105,15 +122,20 @@ setTimeout(update, 3000);
 })();
 
 // Javascript Functions -->
-
 function searchFunction() {
-	if ($('#dashcontent') || $('lightcontent') || $('scenecontent') || $('utilitycontent') || $('weatherwidgets') || $('tempwidgets')) {
-		var value = $('#searchInput').val().toLowerCase();
-		$("div .item").filter(function () {
-			$(this).toggle($(this).find('#name').html().toLowerCase().indexOf(value) > -1)
-		});
-	};
-};
+    var value = $("#searchInput").val().toLowerCase();
+    $("div .item").filter(function() {
+        var element = $(this);
+        if ($("#dashcontent").length || $("#weatherwidgets").length || $("#tempwidgets").length) {
+            element = $(this).parent();
+        }
+        element.toggle($(this).find("#name").html().toLowerCase().indexOf(value) > -1);
+    });
+    $(".mobileitem tr").filter(function() {
+        $(this).toggle($(this).html().toLowerCase().indexOf(value) > -1);
+    });
+    removeEmptySectionDashboard();
+}
 
 function update() {
 	$.ajax({
@@ -127,6 +149,15 @@ function update() {
 				}
 		}
 	});
+}
+
+function removeEmptySectionDashboard() {
+    $("#dashcontent section").each(function() {
+        $(this).show();
+        if (!$(this).children("div.row").children(":visible").length) {
+            $(this).hide();
+        }
+    });
 }
 
 // <-- End Javascript Functions
