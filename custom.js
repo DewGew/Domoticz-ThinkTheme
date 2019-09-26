@@ -1,12 +1,26 @@
 /*
 		Custom js for ThinkTheme
 */
-var theme = {};
+var theme = {}, lang, user;
 /* Load files */
 $.ajax({
-	url: 'acttheme/time_ago.js',
-	async: false,
-	dataType: 'script'
+    url: "json.htm?type=settings",
+    cache: false,
+    async: false,
+    dataType: "json",
+    success: function(b) {
+        lang = b.Language;
+        user = b.WebUserName;
+    }
+});
+
+$.ajax({
+    url: "acttheme/moment.js",
+    async: false,
+    dataType: "script",
+    success: function() {
+        moment.locale(lang);
+    }
 });
 $.ajax({
 	url: 'acttheme/theme.json',
@@ -17,29 +31,6 @@ $.ajax({
 		theme = localJson;
 	}
 });
-
-/* Uncomment below to use custom language for timeago */
-/*
-jQuery.timeago.settings.strings = {
-
-	prefixAgo: "för",
-	prefixFromNow: "om",
-	suffixAgo: "sedan",
-	suffixFromNow: "",
-	seconds: "%d sekunder",
-	minute: "ungefär en minut",
-	minutes: "%d minuter",
-	hour: "ungefär en timme",
-	hours: "ungefär %d timmar",
-	day: "en dag",
-	days: "%d dagar",
-	month: "ungefär en månad",
-	months: "%d månader",
-	year: "ungefär ett år",
-	years: "%d år"
-
-};
-*/
 
 setTimeout(update, 3000);
 
@@ -78,7 +69,7 @@ setTimeout(update, 3000);
 									$('<td id="timeago" class="timeago"></td>').insertBefore($(this).find('#lastupdate'));
 									$(this).find('#lastupdate').remove();
 								}
-								$(this).find("#timeago").timeago("update", lastUpdateTime.text());
+								$(this).find("#timeago").text(moment(lastUpdateTime.text()).fromNow());
 								// <-- End Time Ago
 
 								// Idx no -->
