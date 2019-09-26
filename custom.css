@@ -122,6 +122,11 @@ header.logo {
 .bannercontent {
 	margin-top: 20px;
 }
+@media (max-width: 1200px) {
+    .brand h2{
+        display: none;
+    }
+}
 
 /* Navbar */ 
 .navbar .nav li a {
