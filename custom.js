@@ -41,14 +41,15 @@ setTimeout(update, 3000);
 
 		$(document).ajaxSuccess(function (event, xhr, settings) {
 			
-            var pagedetect = window.location.href.split("/#/")[1].toLowerCase();
+	    var pagedetect = window.location.href.split("/#/")[1];
+            document.title = 'Domoticz - ' + pagedetect;
             if ($(".container-logo").length == 0) {
                 var containerLogo = '<header class="logo"><div class="container-logo">';
                 containerLogo += "</div></header>";
                 $(containerLogo).insertBefore(".navbar-inner");
             }
             	// Add searchbar
-           	if (pagedetect == 'dashboard' || pagedetect == 'lightswitches' || pagedetect == 'scenes' || pagedetect == 'temperature' || pagedetect == 'weather' || pagedetect == 'utility'){
+		if (pagedetect.toLowerCase() == 'dashboard' || pagedetect.toLowerCase() == 'lightswitches' || pagedetect.toLowerCase() == 'scenes' || pagedetect.toLowerCase() == 'temperature' || pagedetect.toLowerCase() == 'weather' || pagedetect.toLowerCase() == 'utility'){
           		if ($("#searchInput").length == 0) {
                         $("#appnavbar")
              	  		$('<input type="text" id="searchInput" autocomplete="off" onkeyup="searchFunction()" placeholder="Filter Devices" title="Filter">').appendTo('.container-logo');
