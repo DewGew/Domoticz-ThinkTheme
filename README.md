@@ -4,7 +4,7 @@ ThinkTheme for Domoticz V3.8XXX and above
 
 Modyfied from [ThinkTheme in domoticz forum](http://www.domoticz.com/forum/viewtopic.php?f=8&t=7863)
 
-Save the files in `../www/styles/ThinkTheme/` and then choose 'ThinkTheme' from Setup > Settings > Theme. The icons are from this [topic](http://domoticz.com/forum/viewtopic.php?f=8&t=7749) but the theme also works fine with just the stock Domoticz icons. Copy the icons to `../www/styles/ThinkTheme/images/`
+Save the files in `../www/styles/ThinkTheme/` and then choose 'ThinkTheme' from Setup > Settings > Theme.
 
 ## Installation with git
 NOTE: "${USER}" will automatically take your username. No need to change that. Just copy and paste.
