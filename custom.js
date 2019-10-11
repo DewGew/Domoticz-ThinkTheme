@@ -149,7 +149,6 @@ function showThemeSettings() {
         html += '<h2><span data-i18n="About">About</span> ThinkTheme</h2>';
         html += '<p><span data-i18n="Version">Version</span> ' + theme.version + '</p>';
         html += '<p>This is a modyfied theme made by Domoticz user <a href= "https://www.domoticz.com/forum/viewtopic.php?f=8&t=7863">Thinkpad</a>';
-        html += '<p>You can use icons from this <a href= "https://www.domoticz.com/forum/viewtopic.php?f=8&t=7749">topic</a> but the theme also works fine with just the stock Domoticz icons. Copy the icons to <code>../www/styles/ThinkTheme/images/</code></p>'
         html += '</div>';
         html += '</div>';
         html += '</div></section>';
