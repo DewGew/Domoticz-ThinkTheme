@@ -1,8 +1,8 @@
 /*
 		Custom js for ThinkTheme
 */
-
 var theme = {}, lang, user;
+var isMobile = /Android|webOS|iPhone|iPad|iPod|ZuneWP7|BlackBerry/i.test(navigator.userAgent);
 /* Load files */
 $.ajax({
     url: "json.htm?type=settings",
@@ -37,7 +37,7 @@ setTimeout(update, 6000);
 (function () {
 	$(document).ready(function () {
 		// Add custom code -->
-		var isMobile = /Android|webOS|iPhone|iPad|iPod|ZuneWP7|BlackBerry/i.test(navigator.userAgent);
+		
         showThemeSettings();
 
 		$(document).ajaxSuccess(function (event, xhr, settings) {
@@ -74,53 +74,41 @@ setTimeout(update, 6000);
             }else {
                 $("#searchInput").remove();
             }
+            /* Set $scope variable when angular is available */
+            var $scope = null;
+            checkAngular = setInterval(function() {
+                if (($scope === null) && (typeof angular !== "undefined") && (typeof angular.element(document.body).injector() !== "undefined")) {
+                    clearInterval(checkAngular);
+                    $scope = angular.element(document.body).injector().get('$rootScope');
 
-			if (settings.url.startsWith('json.htm?type=devices') ||
-				settings.url.startsWith('json.htm?type=scenes')) {
-				let counter = 0;
-				let intervalId = setInterval(function () {
-                    if ($('#main-view').find('.item').length > 0) {
-                        // Add custom functions to items(tiles) -->
-
-                        $('#main-view .item').each(function () {
-
-                            // Time Ago -->
-                            let lastupdated = $(this).find('#timeago');
-                            let lastUpdateTime = $(this).find('#lastupdate');
-                            if (lastupdated.length == 0) {
-                                //$(this).find('table tbody tr').append('<td id="timeago" class="timeago"></td>');
-                                $('<td id="timeago" class="timeago"></td>').insertBefore($(this).find('#lastupdate'));
-                                $(this).find('#lastupdate').hide();
-                            }
-                            $(this).find("#timeago").text(moment(lastUpdateTime.text()).fromNow());
-                            // <-- End Time Ago
-
-                            // Idx no -->
-
-                            if ($('#dashcontent').length == 0 && isMobile == false) {
-                                let item = $(this).closest('.item');
-                                var itemID = item.attr('id');
-                                if (typeof(itemID) === 'undefined') {
-                                    itemID = item[0].offsetParent.id;
-                                }
-                                let type = $(this).find('#idno');
-                                if (type.length == 0) {
-                                    $(this).find('#timeago').append('<i id="idno"></br>Idx: ' + itemID + '</i>');
-                                }
-                            } // <-- Idx no
-
-                        });
-
-                        // <-- End custom functions to items(tiles)
-                        clearInterval(intervalId);
-                    } else {
-                        counter++;
-                        if (counter >= 5) {
-                            clearInterval(intervalId);
-                        }
+                    /* Check Domoticz version */
+                    var dom_ws_version = 11330;
+                    var current_version = parseInt($scope.config.appversion.split(".")[1]);
+                    if (current_version < dom_ws_version) {
+                        console.error("To be fully working, this theme requires to run Domoticz version " + dom_ws_version + " minimum -- Your version is " + current_version);
                     }
-                }, 1000);
-			}
+                    $scope.$on('jsonupdate', function (event, data) {
+                        if (data.title === "Devices") {
+/*                             if (data.item.Type === "Light/Switch") {
+                                console.log(data.item.idx, data.item.Name, data.item.Data)
+                                if (data.item.Data === "On"){
+                                    console.log(data.item.Name, 'är', data.item.Data)
+                                }
+                            }
+                            if (data.item.Type === "Temp") {
+                                console.log(data.item.idx, data.item.Name, data.item.Data)
+                            } */
+                            addCustomItems(data);
+                        } else {
+                            // Other ? Notification ?
+                            console.debug("Other event --> " + data);
+                        }
+                    }, function errorCallback(response) {
+                        console.error("Cannot connect to websocket");
+                    });
+                }
+            }, 100);
+
 		});
 
 		// <-- End custom code
@@ -194,28 +182,36 @@ function update() {
 		}
 	});
 }
+function addCustomItems(data){
+    if ($('#main-view').find('.item').length > 0) {
+    // Add custom functions to items(tiles) -->
+        $('#main-view .item').each(function () {
+            // Time Ago -->
+            let lastupdated = $(this).find('#timeago');
+            let lastUpdateTime = $(this).find('#lastupdate');
+            if (lastupdated.length == 0) {
+                //$(this).find('table tbody tr').append('<td id="timeago" class="timeago"></td>');
+                $('<td id="timeago" class="timeago"></td>').insertBefore($(this).find('#lastupdate'));
+                $(this).find('#lastupdate').hide();
+            }
+            $(this).find("#timeago").text(moment(lastUpdateTime.text()).fromNow());
+            // <-- End Time Ago
+
+            // Idx no -->
+            if ($('#dashcontent').length == 0 && isMobile == false) {
+                let item = $(this).closest('.item');
+                var itemID = item.attr('id');
+                if (typeof(itemID) === 'undefined') {
+                    itemID = item[0].offsetParent.id;
+                }
+                let type = $(this).find('#idno');
+                if (type.length == 0) {
+                    $(this).find('#timeago').append('<i id="idno"></br>Idx: ' + itemID + '</i>');
+                }
+            }
+            // <-- Idx no
+        });
+    }
+}
 
 // <-- End Javascript Functions
-
-// Improvement not yet ready -->
-
-/* Set $scope variable when angular is available */
-/* var $scope = null;
-checkAngular = setInterval(function() {
-    if (($scope === null) && (typeof angular !== "undefined") && (typeof angular.element(document.body).injector() !== "undefined")) {
-        clearInterval(checkAngular);
-        $scope = angular.element(document.body).injector().get('$rootScope');
-        $scope.$on('jsonupdate', function (event, data) {
-            if (data.title === "Devices") {
-                // Update device
-                console.log("New data regarding device idx " + data.item.idx + " updated --> " + data.item.Data);
-                console.debug(data.item);
-            } else {
-                // Other ? Notification ?
-                console.debug("Other event --> " + data);
-            }
-        }, function errorCallback(response) {
-        console.error("Cannot connect to websocket");
-    });
-}
-}, 100); */
