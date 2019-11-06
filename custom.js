@@ -90,7 +90,7 @@ setTimeout(update, 6000);
                             if (lastupdated.length == 0) {
                                 //$(this).find('table tbody tr').append('<td id="timeago" class="timeago"></td>');
                                 $('<td id="timeago" class="timeago"></td>').insertBefore($(this).find('#lastupdate'));
-                                $(this).find('#lastupdate').remove();
+                                $(this).find('#lastupdate').hide();
                             }
                             $(this).find("#timeago").text(moment(lastUpdateTime.text()).fromNow());
                             // <-- End Time Ago
