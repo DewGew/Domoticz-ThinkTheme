@@ -84,17 +84,18 @@ setTimeout(update, 6000);
 
                         $('#main-view .item').each(function () {
 
-			    // Time Ago -->
-			    $(this).find('#lastupdate').hide();
-			    let lastupdated = $(this).find('#timeago');
-			    let lastUpdateTime = $(this).find('#lastupdate');
-			    if (lastupdated.length == 0) {
-				$(this).find('#type').prepend('<div id="timeago" class="timeago"></div>');
-				//$('<td id="timeago" class="timeago"></td>').insertAfter($(this).find('#lastupdate'));              
-			    }
-			    $(this).find("#timeago").text(moment(lastUpdateTime.text()).fromNow());
-
-			    // <-- End Time Ago
+                            // Time Ago -->
+                            $(this).find('#lastupdate').hide();
+                            let lastupdated = $(this).find('#timeago');
+                            let lastUpdateTime = $(this).find('#lastupdate');
+                            if (lastupdated.length == 0) {
+                                $(this).find('#type').prepend('<div id="timeago" class="timeago"></div>');            
+                            }
+                            if ($(this).find('#type').length == 0) {
+                                $('<td id="timeago" class="timeago"></td>').insertBefore($(this).find('#lastupdate'));
+                            }
+                            $(this).find("#timeago").text(moment(lastUpdateTime.text()).fromNow());
+                            // <-- End Time Ago
 
                             // Idx no -->
 
