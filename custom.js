@@ -35,10 +35,50 @@ $.ajax({
 
 setTimeout(update, 6000);
 
+/* Set $scope variable when angular is available */
+var show_msg = false
+var $scope = null;
+checkAngular = setInterval(function() {
+    if (($scope === null) && (typeof angular !== "undefined") && (typeof angular.element(document.body).injector() !== "undefined")) {
+        clearInterval(checkAngular);
+        $scope = angular.element(document.body).injector().get('$rootScope');
+
+        /* Check Domoticz version */
+        
+        var dom_ws_version = 11330;
+        var current_version = parseInt($scope.config.appversion.split(".")[1]);
+        if (current_version < dom_ws_version && show_msg == false) {
+            console.error("To be fully working, this theme requires to run Domoticz version " + dom_ws_version + " minimum -- Your version is " + current_version);
+            generate_noty('warning', "To be fully working, this theme requires to run Domoticz version " + dom_ws_version + " minimum -- Your version is " + current_version, false);
+            show_msg = true
+        }
+
+        $scope.$on('jsonupdate', function (event, data) {
+            if (data.title === "Devices") {
+/*              if (data.item.Type === "Light/Switch") {
+                    console.log(data.item.idx, data.item.Name, data.item.Data)
+                    if (data.item.Data === "On"){
+                        console.log(data.item.Name, 'är', data.item.Data)
+                    }
+                }
+                if (data.item.Type === "Temp") {
+                    console.log(data.item.idx, data.item.Name, data.item.Data)
+                } */
+                addCustomItems(data);
+            } else {
+                // Other ? Notification ?
+                console.debug("Other event --> " + data);
+            }
+        }, function errorCallback(response) {
+            console.error("Cannot connect to websocket");
+        });
+    }
+}, 100);
+
 (function () {
 	$(document).ready(function () {
 		// Add custom code -->
-		var show_msg = false
+		
         showThemeSettings();
 
 		$(document).ajaxSuccess(function (event, xhr, settings) {
@@ -75,45 +115,7 @@ setTimeout(update, 6000);
             }else {
                 $("#searchInput").remove();
             }
-            /* Set $scope variable when angular is available */
-            
-            var $scope = null;
-            checkAngular = setInterval(function() {
-                if (($scope === null) && (typeof angular !== "undefined") && (typeof angular.element(document.body).injector() !== "undefined")) {
-                    clearInterval(checkAngular);
-                    $scope = angular.element(document.body).injector().get('$rootScope');
 
-                    /* Check Domoticz version */
-                    
-                    var dom_ws_version = 11330;
-                    var current_version = parseInt($scope.config.appversion.split(".")[1]);
-                    if (current_version < dom_ws_version && show_msg == false) {
-                        console.error("To be fully working, this theme requires to run Domoticz version " + dom_ws_version + " minimum -- Your version is " + current_version);
-                        generate_noty('warning', "To be fully working, this theme requires to run Domoticz version " + dom_ws_version + " minimum -- Your version is " + current_version, false);
-                        show_msg = true
-                    }
-
-                    $scope.$on('jsonupdate', function (event, data) {
-                        if (data.title === "Devices") {
-/*                             if (data.item.Type === "Light/Switch") {
-                                console.log(data.item.idx, data.item.Name, data.item.Data)
-                                if (data.item.Data === "On"){
-                                    console.log(data.item.Name, 'är', data.item.Data)
-                                }
-                            }
-                            if (data.item.Type === "Temp") {
-                                console.log(data.item.idx, data.item.Name, data.item.Data)
-                            } */
-                            addCustomItems(data);
-                        } else {
-                            // Other ? Notification ?
-                            console.debug("Other event --> " + data);
-                        }
-                    }, function errorCallback(response) {
-                        console.error("Cannot connect to websocket");
-                    });
-                }
-            }, 100);
 
 		});
 
@@ -188,7 +190,7 @@ function update() {
 		}
 	});
 }
-function addCustomItems(data){
+function addCustomItems(data) {
     if ($('#main-view').find('.item').length > 0) {
     // Add custom functions to items(tiles) -->
         $('#main-view .item').each(function () {
@@ -206,7 +208,6 @@ function addCustomItems(data){
             }
             // <-- Idx no
 	    // Time Ago -->
-        $(this).find('#lastupdate').hide();
 	    let lastupdated = $(this).find('#timeago');
 	    let lastUpdateTime = $(this).find('#lastupdate');
 	    if (lastupdated.length == 0) {
@@ -214,12 +215,12 @@ function addCustomItems(data){
 	    
             if ($(this).find('#type').length == 0) {
                 
-                $(this).find('#status').prepend('<div id="timeago" class="lastupdate"></div>');
+                $(this).find('#status').append('<div id="timeago" class="lastupdate"></div>');
                 //$('<td id="timeago" class="timeago"></td>').insertBefore($(this).find('#lastupdate'));
             }
         }
 	    $(this).find("#timeago").text(moment(lastUpdateTime.text()).fromNow());
-
+        $(this).find('#lastupdate').hide();
 	    // <-- End Time Ago
         });
     }
