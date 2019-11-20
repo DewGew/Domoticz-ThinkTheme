@@ -186,17 +186,6 @@ function addCustomItems(data){
     if ($('#main-view').find('.item').length > 0) {
     // Add custom functions to items(tiles) -->
         $('#main-view .item').each(function () {
-            // Time Ago -->
-            let lastupdated = $(this).find('#timeago');
-            let lastUpdateTime = $(this).find('#lastupdate');
-            if (lastupdated.length == 0) {
-                //$(this).find('table tbody tr').append('<td id="timeago" class="timeago"></td>');
-                $('<td id="timeago" class="timeago"></td>').insertBefore($(this).find('#lastupdate'));
-                $(this).find('#lastupdate').hide();
-            }
-            $(this).find("#timeago").text(moment(lastUpdateTime.text()).fromNow());
-            // <-- End Time Ago
-
             // Idx no -->
             if ($('#dashcontent').length == 0 && isMobile == false) {
                 let item = $(this).closest('.item');
@@ -206,10 +195,20 @@ function addCustomItems(data){
                 }
                 let type = $(this).find('#idno');
                 if (type.length == 0) {
-                    $(this).find('#timeago').append('<i id="idno"></br>Idx: ' + itemID + '</i>');
+                    $(this).find('#type').prepend('<div id="idno"> Idx: ' + itemID + '</div>');
                 }
             }
             // <-- Idx no
+            // Time Ago -->
+            $(this).find('#lastupdate').hide();
+            let lastupdated = $(this).find('#timeago');
+            let lastUpdateTime = $(this).find('#lastupdate');
+            if (lastupdated.length == 0) {
+                $(this).find('#type').prepend('<div id="timeago" class="timeago"></div>');            
+            }
+            $(this).find("#timeago").text(moment(lastUpdateTime.text()).fromNow());
+            
+            // <-- End Time Ago
         });
     }
 }
