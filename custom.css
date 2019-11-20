@@ -307,7 +307,9 @@ body table#itemtable tr td:first-child + td {
    color: #404552;
    margin: -27px 6px 0px 0px;
 }
-
+body table#itemtabletrippleicon tr td:first-child + td + td + td + td + td + td + td:before {
+    display: None;
+}
 /* Table rows even */
 tr.even {
    background-color: #34363F;
