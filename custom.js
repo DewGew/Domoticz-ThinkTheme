@@ -3,6 +3,7 @@
 */
 var theme = {}, lang, user;
 var isMobile = /Android|webOS|iPhone|iPad|iPod|ZuneWP7|BlackBerry/i.test(navigator.userAgent);
+
 /* Load files */
 $.ajax({
     url: "json.htm?type=settings",
@@ -37,7 +38,7 @@ setTimeout(update, 6000);
 (function () {
 	$(document).ready(function () {
 		// Add custom code -->
-		
+		var show_msg = false
         showThemeSettings();
 
 		$(document).ajaxSuccess(function (event, xhr, settings) {
@@ -75,6 +76,7 @@ setTimeout(update, 6000);
                 $("#searchInput").remove();
             }
             /* Set $scope variable when angular is available */
+            
             var $scope = null;
             checkAngular = setInterval(function() {
                 if (($scope === null) && (typeof angular !== "undefined") && (typeof angular.element(document.body).injector() !== "undefined")) {
@@ -82,11 +84,15 @@ setTimeout(update, 6000);
                     $scope = angular.element(document.body).injector().get('$rootScope');
 
                     /* Check Domoticz version */
+                    
                     var dom_ws_version = 11330;
                     var current_version = parseInt($scope.config.appversion.split(".")[1]);
-                    if (current_version < dom_ws_version) {
+                    if (current_version < dom_ws_version && show_msg == false) {
                         console.error("To be fully working, this theme requires to run Domoticz version " + dom_ws_version + " minimum -- Your version is " + current_version);
+                        generate_noty('warning', "To be fully working, this theme requires to run Domoticz version " + dom_ws_version + " minimum -- Your version is " + current_version, false);
+                        show_msg = true
                     }
+
                     $scope.$on('jsonupdate', function (event, data) {
                         if (data.title === "Devices") {
 /*                             if (data.item.Type === "Light/Switch") {
@@ -136,7 +142,7 @@ function showThemeSettings() {
         html += '<div class="span12">';
         html += '<h2><span data-i18n="About">About</span> ThinkTheme</h2>';
         html += '<p><span data-i18n="Version">Version</span> ' + theme.version + '</p>';
-        html += '<p>This is a modyfied theme made by Domoticz user <a href= "https://www.domoticz.com/forum/viewtopic.php?f=8&t=7863">Thinkpad</a>';
+        html += '<p>This is a modyfied theme made by Domoticz user Thinkpad. For more help visit <a href= "https://www.domoticz.com/forum/viewtopic.php?f=8&t=7863">domoticz forum</a>';
         html += '</div>';
         html += '</div>';
         html += '</div></section>';
