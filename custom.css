@@ -342,6 +342,9 @@ div:not(.ui-dialog) input.ui-widget-content,
 	background-image: none !important;
 	border: none;
 }
+.ui-dialog {
+    z-index: 9999;
+}
 .ui-dialog, .ui-dialog-buttonpane, .ui-widget-content {
 	color: #ddd; /*!important;*/
 	background-color: #013;
@@ -455,7 +458,6 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
 
 .ui-widget-content {
    background: #2B2E37 !important;
-   z-index: 9999;
 }
 
 /* Background colors */
