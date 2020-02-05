@@ -455,6 +455,7 @@ table.display tr.odd.row_selected td, table.display tr.even.row_selected td {
 
 .ui-widget-content {
    background: #2B2E37 !important;
+   z-index: 9999;
 }
 
 /* Background colors */
