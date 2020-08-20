@@ -4,9 +4,10 @@ ThinkTheme for Domoticz V3.8XXX and above
 
 Modyfied from [ThinkTheme in domoticz forum](http://www.domoticz.com/forum/viewtopic.php?f=8&t=7863)
 
-Save the files in `../www/styles/ThinkTheme/` and then choose 'ThinkTheme' from Setup > Settings > Theme.
+# Installation
+We recommend you to use the [Theme manager plugin](https://github.com/galadril/domoticz-theme-manager) to install and keep up-to-date the theme.
 
-## Installation with git
+## Manual Installation
 NOTE: "${USER}" will automatically take your username. No need to change that. Just copy and paste.
 ```
 cd /home/${USER}/domoticz/www/styles
