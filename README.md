@@ -20,8 +20,8 @@ git pull
 ```
 
 # Screenshot
-![alt tag](http://www.accentaplast.se/wordpress/wp-content/uploads/2017/11/ThinkTheme.jpg)
-![alt tag](http://www.accentaplast.se/wordpress/wp-content/uploads/2017/11/ThinkTheme_settings.png)
+![ThinkTheme](ThinkTheme.png)
+
 # Changelog
 - v2.4.4 Added Theme info in settings/theme
 - v2.4.3 Change time_ago to momont.js 
