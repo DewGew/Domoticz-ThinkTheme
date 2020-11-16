@@ -16,14 +16,6 @@ $.ajax({
     }
 });
 $.ajax({
-    url: "acttheme/moment.js",
-    async: false,
-    dataType: "script",
-    success: function() {
-        moment.locale(lang);
-    }
-});
-$.ajax({
 	url: 'acttheme/theme.json',
 	cache: false,
 	async: false,
