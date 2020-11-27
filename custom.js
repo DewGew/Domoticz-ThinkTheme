@@ -14,14 +14,26 @@ $.ajax({
         user = b.WebUserName;
     }
 });
+
 $.ajax({
-    url: "acttheme/moment.js",
+    url: "/json.htm?type=command&param=getversion",
     async: false,
-    dataType: "script",
-    success: function() {
-        moment.locale(lang);
+    dataType: "json",
+    success: function(data) {
+        version = data.version
+        version = version.replace(')','')
+        version = version.replace(' (build ', '.');
+        if (version === '2020.2.11995'){
+            console.log('load moment.js')
+            $.ajax({	
+                url: "acttheme/js/moment.js",	
+                async: false,	
+                dataType: "script",	
+            });
+        }
     }
 });
+
 $.ajax({
 	url: 'acttheme/theme.json',
 	cache: false,
