@@ -23,6 +23,7 @@ git pull
 ![ThinkTheme](ThinkTheme.png)
 
 # Changelog
+- v2.4.7 Moment.js loads only in domoticz stable
 - v2.4.4 Added Theme info in settings/theme
 - v2.4.3 Change time_ago to momont.js 
 - V2.4.2 Small improvements
