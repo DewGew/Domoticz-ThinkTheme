@@ -1,5 +1,5 @@
 /* Don't remove these lines! --> */
-@import url("../css/legacy.css");
+@import url("../../css/legacy.css");
 @import url("base.css");
 @import url(https://fonts.googleapis.com/css?family=Damion);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
@@ -40,7 +40,7 @@ body {
 #searchInput {
   position: relative;
   float: right;
-  background-image: url('../images/searchicon.png');
+  background-image: url('./images/searchicon.png');
   background-color: #404552;
   background-position: 10px 12px;
   background-repeat: no-repeat;
