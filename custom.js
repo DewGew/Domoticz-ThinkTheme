@@ -26,7 +26,7 @@ $.ajax({
         if (version === '2020.2.11995'){
             console.log('load moment.js')
             $.ajax({	
-                url: "acttheme/js/moment.js",	
+                url: "styles/ThinkTheme/moment.js",	
                 async: false,	
                 dataType: "script",	
             });
@@ -35,7 +35,7 @@ $.ajax({
 });
 
 $.ajax({
-	url: 'acttheme/theme.json',
+	url: 'styles/ThinkTheme/theme.json',
 	cache: false,
 	async: false,
 	dataType: 'json',
