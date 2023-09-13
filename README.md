@@ -1,4 +1,4 @@
-# ThinkTheme
+# ThinkTheme (deprecated)
 
 ThinkTheme for Domoticz V3.8XXX and above
 
