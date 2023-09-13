@@ -1,4 +1,6 @@
-# ThinkTheme (deprecated)
+# ThinkTheme (Deprecated)
+
+<i>This theme is deprecated and there is no more support for this theme<i>
 
 ThinkTheme for Domoticz V3.8XXX and above
 
